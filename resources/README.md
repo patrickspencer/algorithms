@@ -15,15 +15,21 @@
 
 Some problems in these categories overlap
 
+## Array
+
+[Russian doll envelopes](https://leetcode.com/problems/russian-doll-envelopes/)
+[Snapshot Array](https://leetcode.com/problems/snapshot-array/)
+[Search rotated Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+
 ### Grid
-[https://leetcode.com/problems/word-search-ii/](https://leetcode.com/problems/maximal-rectangle/)
-[https://leetcode.com/problems/making-a-large-island/](https://leetcode.com/problems/making-a-large-island/)
-[https://leetcode.com/problems/making-a-large-island/](https://leetcode.com/problems/making-a-large-island/)
-[https://leetcode.com/problems/unique-paths-ii/](https://leetcode.com/problems/maximal-rectangle/)
-[https://leetcode.com/problems/unique-paths-ii/](https://leetcode.com/problems/maximal-rectangle/)
-[https://leetcode.com/problems/path-with-maximum-gold/](https://leetcode.com/problems/maximal-rectangle/)
-[https://leetcode.com/problems/longest-increasing-path-in-a-matrix/](https://leetcode.com/problems/maximal-rectangle/)
-[https://leetcode.com/problems/maximal-rectangle/](https://leetcode.com/problems/maximal-rectangle/)
+[Word Search ii](https://leetcode.com/problems/maximal-rectangle/)
+[Make a large island](https://leetcode.com/problems/making-a-large-island/)
+[Maximal Rectangle]](https://leetcode.com/problems/maximal-rectangle/)
+[Path with maximum gold](https://leetcode.com/problems/path-with-maximum-gold/)
+[Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
+[Unique Paths I](https://leetcode.com/problems/unique-paths/)
+[Unique Paths II]([https://leetcode.com/problems/unique-paths-ii/](https://leetcode.com/problems/unique-paths-ii/))
+[Unique Paths III](https://leetcode.com/problems/unique-paths-iii/)
 
 ### Trie
 https://leetcode.com/problems/word-search-ii/
