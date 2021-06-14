@@ -22,20 +22,20 @@ Some problems in these categories overlap
 [Search rotated Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
 ### Grid
-[Word Search ii](https://leetcode.com/problems/maximal-rectangle/)
-[Make a large island](https://leetcode.com/problems/making-a-large-island/)
-[Maximal Rectangle]](https://leetcode.com/problems/maximal-rectangle/)
-[Path with maximum gold](https://leetcode.com/problems/path-with-maximum-gold/)
-[Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
-[Unique Paths I](https://leetcode.com/problems/unique-paths/)
-[Unique Paths II]([https://leetcode.com/problems/unique-paths-ii/](https://leetcode.com/problems/unique-paths-ii/))
-[Unique Paths III](https://leetcode.com/problems/unique-paths-iii/)
+- [Word Search ii](https://leetcode.com/problems/maximal-rectangle/)
+- [Make a large island](https://leetcode.com/problems/making-a-large-island/)
+- [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)
+- [Path with maximum gold](https://leetcode.com/problems/path-with-maximum-gold/)
+- [Longest Increasing Path in a Matrix](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)
+- [Unique Paths I](https://leetcode.com/problems/unique-paths/)
+- [Unique Paths II]([https://leetcode.com/problems/unique-paths-ii/](https://leetcode.com/problems/unique-paths-ii/))
+- [Unique Paths III](https://leetcode.com/problems/unique-paths-iii/)
 
 ### Trie
-https://leetcode.com/problems/word-search-ii/
+- [Word Search ii](https://leetcode.com/problems/word-search-ii/)
 
 ## Two pointers
-[https://leetcode.com/problems/trapping-rain-water/](https://leetcode.com/problems/trapping-rain-water/)
+- [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
 
 ## Stack
 
