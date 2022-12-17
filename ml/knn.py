@@ -10,7 +10,6 @@ Implementation of KNN
 
 Testing script
 --------------
-
 from sklearn.model_selection import train_test_split
 
 # make two points with a known l2 distance
