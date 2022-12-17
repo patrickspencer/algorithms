@@ -8,15 +8,17 @@ knn.py
 
 Implementation of KNN
 
-# make two points with a known l2 distance
-# answer is 5
+Testing script
+--------------
+
 from sklearn.model_selection import train_test_split
 
+# make two points with a known l2 distance
+# answer is 5
 p1 = np.array([0., 4.])
 p2 = np.array([3., 0.])
 X = np.random.normal(size=[10, 2])
 y = np.random.randint(0, 2, 10)  # y is the array of classes
-
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
 
