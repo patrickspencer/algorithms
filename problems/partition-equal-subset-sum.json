@@ -1,0 +1,37 @@
+{
+ "id": "43",
+ "slug": "partition-equal-subset-sum",
+ "title": "Splittable Into Equal-Sum Groups",
+ "tags": [
+  "Array",
+  "Dynamic Programming",
+  "Knapsack Problem",
+  "0-1 Knapsack"
+ ],
+ "statement": "You are given a collection of positive integers representing weights of individual items. Determine whether it is possible to divide all of the items into exactly two groups (every item must be placed into one group or the other, none left out and none duplicated) such that the sum of the weights in the first group equals the sum of the weights in the second group.\n\nYou do not need to output the groups themselves, only report whether such a division exists.\n\nThink of this as a variant of the classic knapsack problem: since the total sum of all items is fixed, the question reduces to whether some subset of the items adds up to exactly half of that total sum. If the total sum is odd, an equal split is immediately impossible.",
+ "functionName": "canSplitEvenly",
+ "params": [
+  {
+   "name": "weights",
+   "type": "int[]"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "weights = [4, 5, 3, 6, 2]",
+   "output": "true",
+   "explanation": "The total sum is 20, so each group must sum to 10. Group A = {4, 3, 2... }, specifically {5, 3, 2} sums to 10, and the remaining items {4, 6} also sum to 10, so an equal split exists."
+  },
+  {
+   "input": "weights = [7, 2, 11, 5]",
+   "output": "false",
+   "explanation": "The total sum is 25, which is odd, so it can never be divided into two groups with equal sums."
+  }
+ ],
+ "constraints": [
+  "1 <= weights.length <= 200",
+  "1 <= weights[i] <= 100",
+  "The total sum of weights fits comfortably within a 32-bit signed integer"
+ ]
+}

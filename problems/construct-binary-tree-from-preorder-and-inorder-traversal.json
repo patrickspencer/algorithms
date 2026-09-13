@@ -1,0 +1,44 @@
+{
+ "id": "21",
+ "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+ "title": "Rebuild a Binary Tree from Its Preorder and Inorder Scans",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "Divide and Conquer",
+  "Tree",
+  "Binary Tree"
+ ],
+ "statement": "You are given two sequences describing a scan of the same binary tree, where every node holds a distinct value.\n\nThe first sequence, `preorder`, lists node values in the order you would visit them if, starting at the root, you always record the current node's value before descending first into its left subtree and then into its right subtree.\n\nThe second sequence, `inorder`, lists node values in the order you would visit them if, starting at the root, you always fully descend into the left subtree, then record the current node's value, and then descend into the right subtree.\n\nBoth sequences come from the exact same binary tree and contain the same set of values (each value appears exactly once across the whole tree). Your task is to reconstruct that binary tree and return a reference to its root node.\n\nFor the purpose of describing expected outputs below, a rebuilt tree is written as its level-order (breadth-first) listing of values, where the token `null` marks a position where a child is absent; trailing `null`s that come after the last real node in the listing are omitted.",
+ "functionName": "buildTree",
+ "params": [
+  {
+   "name": "preorder",
+   "type": "number[]"
+  },
+  {
+   "name": "inorder",
+   "type": "number[]"
+  }
+ ],
+ "returns": "TreeNode",
+ "examples": [
+  {
+   "input": "preorder = [4,2,1,3,6,5,7], inorder = [1,2,3,4,5,6,7]",
+   "output": "[4,2,6,1,3,5,7]",
+   "explanation": "The first value of preorder, 4, is the root. In inorder, everything before 4 ([1,2,3]) belongs to the left subtree and everything after ([5,6,7]) belongs to the right subtree. Recursing the same way on [1,2,3] (using preorder slice [2,1,3]) builds a node 2 with left child 1 and right child 3; recursing on [5,6,7] (using preorder slice [6,5,7]) builds a node 6 with left child 5 and right child 7. Combining gives root 4 with left subtree rooted at 2 and right subtree rooted at 6."
+  },
+  {
+   "input": "preorder = [9,7,5,3], inorder = [3,5,7,9]",
+   "output": "[9,7,null,5,null,3]",
+   "explanation": "Root is 9 (first of preorder). In inorder, nothing appears after 9, so the right subtree is empty, and everything before 9 ([3,5,7]) is the left subtree. Repeating this logic shows each subsequent node also has an empty right child, producing a purely left-leaning chain: 9 -> 7 -> 5 -> 3."
+  }
+ ],
+ "constraints": [
+  "1 <= preorder.length == inorder.length <= 3000",
+  "All values in preorder are distinct, and the same holds for inorder",
+  "Every value that appears in preorder also appears in inorder, and vice versa",
+  "-3000 <= preorder[i], inorder[i] <= 3000",
+  "It is guaranteed that preorder and inorder are valid traversals of one and the same binary tree"
+ ]
+}

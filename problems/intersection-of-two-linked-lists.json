@@ -1,0 +1,42 @@
+{
+ "id": "70",
+ "slug": "intersection-of-two-linked-lists",
+ "title": "Where Two Chains Meet",
+ "tags": [
+  "Hash Table",
+  "Linked List",
+  "Two Pointers"
+ ],
+ "statement": "You are given the head nodes of two singly linked lists that both end at `null`. Somewhere along their lengths, the two lists may converge into a shared tail, that is, from some node onward, both lists reference the exact same sequence of node objects all the way to the end. Before that shared portion, each list has its own private, non-overlapping stretch of nodes.\n\nWrite a function that finds and returns the node at which the two lists first start sharing structure. If the lists never converge (they are completely separate and share no nodes), return `null`/`None`.\n\nImportant notes on correctness:\n- 'Sharing a node' means the actual node reference is identical in both lists (same object in memory), not merely that two different nodes happen to hold equal values.\n- Once the lists merge, they must stay merged through to the end (a linked list cannot fork back apart), so there is at most one junction point to find.\n- Your solution should ideally avoid mutating either list (e.g., don't reverse a list or alter node values) and should finish in linear time relative to the combined length of the two lists, using no more than constant extra space beyond a few pointers.\n- Assume neither input list contains a cycle.",
+ "functionName": "getIntersectionNode",
+ "params": [
+  {
+   "name": "headA",
+   "type": "ListNode"
+  },
+  {
+   "name": "headB",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode | null",
+ "examples": [
+  {
+   "input": "List A private part: [4, 1, 8], shared tail: [5, 9], List B private part: [6, 2], shared tail: [5, 9]\nSo A = 4 -> 1 -> 8 -> 5 -> 9, B = 6 -> 2 -> 8 -> 5 -> 9 (the node holding 8 is the same object in both lists)",
+   "output": "Node with value 8 (the start of the shared tail)",
+   "explanation": "List A reaches the node containing 8 after traversing 4 and 1; list B reaches that same node after traversing 6 and 2. From the node with 8 onward, both lists share the identical nodes 8 -> 5 -> 9, so 8 is the first point of intersection."
+  },
+  {
+   "input": "List A: [3, 7, 10, 2], List B: [1, 9, 5, 4], no shared nodes at all",
+   "output": "null",
+   "explanation": "Even though nothing overlaps, note that if a value like 2 appeared in both lists as separate nodes with equal value but different identity, that would still not count as an intersection, only actual shared node references count. Since these two lists share no node objects and both terminate independently, the function returns null."
+  }
+ ],
+ "constraints": [
+  "The total number of nodes across both lists is between 0 and 3 * 10^4.",
+  "-10^5 <= Node.val <= 10^5",
+  "The two lists are guaranteed to have no cycles.",
+  "If the lists intersect, the intersection point is guaranteed to be the same for the remainder of both lists (i.e., once merged, they never diverge again).",
+  "Aim for O(m + n) time and O(1) extra space, where m and n are the lengths of the two lists."
+ ]
+}

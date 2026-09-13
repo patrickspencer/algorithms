@@ -1,0 +1,36 @@
+{
+ "id": "19",
+ "slug": "binary-tree-level-order-traversal",
+ "title": "Binary Tree Level Order Traversal",
+ "tags": [
+  "Tree",
+  "Breadth-First Search",
+  "Binary Tree"
+ ],
+ "statement": "You are given the root of a binary tree. Each node in the tree holds an integer value along with references to at most two children, conventionally called left and right.\n\nYour task is to produce a level-by-level grouping of the node values, where the first group contains only the root's value, the second group contains the values of the root's children (from left to right), the third group contains the values of the grandchildren (again from left to right), and so on, continuing until every node has been placed into exactly one group.\n\nReturn the result as a list of groups, where each group is itself a list of integers listed in left-to-right order for that depth. If the tree contains no nodes at all, the returned list should be empty.\n\nA binary tree node is represented by a structure with three fields: `val` (the integer stored at the node), `left` (a reference to the left child node or null if absent), and `right` (a reference to the right child node or null if absent).",
+ "functionName": "levelOrder",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "number[][]",
+ "examples": [
+  {
+   "input": "root = [7,3,15,null,null,9,20]  (meaning: 7 is root; 7's left child is 3 with no children; 7's right child is 15, whose left child is 9 and right child is 20)",
+   "output": "[[7],[3,15],[9,20]]",
+   "explanation": "Depth 0 has only the root value 7. Depth 1 has 3 and 15 in left-to-right order. Depth 2 has 9 and 20, the children of 15 read left to right."
+  },
+  {
+   "input": "root = [1,2,3,4,null,null,5,6]  (meaning: 1 is root with children 2 and 3; 2's left child is 4; 3's right child is 5; 4's right child is 6)",
+   "output": "[[1],[2,3],[4,5],[6]]",
+   "explanation": "Depth 0: just 1. Depth 1: 2 then 3. Depth 2: 4 (child of 2) then 5 (right child of 3). Depth 3: 6, the only grandchild present, coming from 4's right child."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is between 0 and 2000.",
+  "Each node's value is an integer between -1000 and 1000.",
+  "The tree may be empty, in which case the function should return an empty list."
+ ]
+}

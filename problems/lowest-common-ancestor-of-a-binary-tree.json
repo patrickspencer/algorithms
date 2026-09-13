@@ -1,0 +1,48 @@
+{
+ "id": "27",
+ "slug": "lowest-common-ancestor-of-a-binary-tree",
+ "title": "Lowest Common Ancestor of a Binary Tree",
+ "tags": [
+  "Tree",
+  "Depth-First Search",
+  "Binary Tree",
+  "Binary Lifting",
+  "Lowest Common Ancestor"
+ ],
+ "statement": "You are given the root of a binary tree in which every node holds a distinct integer value, along with two nodes `p` and `q` that are guaranteed to exist somewhere in that tree.\n\nDefine an *ancestor* of a node `x` to be any node that lies on the path from the root down to `x`, including `x` itself (a node counts as its own ancestor).\n\nYour task is to find the **lowest common ancestor** of `p` and `q`, that is, the ancestor of both `p` and `q` that is farthest from the root (equivalently, the deepest such shared ancestor). Return that node.\n\nYou may assume the tree is not empty and that `p` and `q` refer to actual nodes contained in the tree (they may be equal to each other, and either one may be an ancestor of the other).",
+ "functionName": "lowestCommonAncestor",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  },
+  {
+   "name": "p",
+   "type": "TreeNode"
+  },
+  {
+   "name": "q",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "TreeNode",
+ "examples": [
+  {
+   "input": "root = [8,3,10,1,6,9,14,null,null,4,7,null,null,13], p = 4, q = 7",
+   "output": "6",
+   "explanation": "Node 4 and node 7 are both found under node 6 (4 and 7 are its children), and 6 is the deepest node from which both are reachable, so 6 is the lowest common ancestor."
+  },
+  {
+   "input": "root = [8,3,10,1,6,9,14,null,null,4,7,null,null,13], p = 1, q = 4",
+   "output": "3",
+   "explanation": "Node 1 is itself an ancestor of node 4 (since 4 sits below node 6, which is a child of 3, and 1 is 3's other child... actually 1 is an ancestor only of itself here, so the lowest node that has both 1 and 4 in its subtree is 3)."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is between 2 and 10^5.",
+  "-10^9 <= Node.val <= 10^9",
+  "All Node.val values are unique.",
+  "p != null, q != null, and both p and q are guaranteed to exist in the tree.",
+  "p and q may be the same node."
+ ]
+}

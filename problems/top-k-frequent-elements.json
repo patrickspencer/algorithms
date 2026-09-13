@@ -1,0 +1,47 @@
+{
+ "id": "58",
+ "slug": "top-k-frequent-elements",
+ "title": "Top K Frequent Elements",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "Divide and Conquer",
+  "Sorting",
+  "Heap (Priority Queue)",
+  "Bucket Sort",
+  "Counting",
+  "Quickselect"
+ ],
+ "statement": "You are given a list of integers and a target count `k`. Your job is to determine which `k` distinct values occur most often in the list, and return them ordered from the most frequent to the least frequent.\n\nIf two or more values tie in frequency, you may return them in any order relative to each other, but every value with a strictly higher frequency must appear before any value with a strictly lower frequency somewhere in your answer. It is guaranteed that the list contains at least `k` distinct values, so the answer is always well-defined and unambiguous in size.\n\nThink about how to solve this faster than simply sorting every distinct value by its frequency, especially when the list is very large but `k` is small compared to the number of distinct values. Approaches such as counting frequencies with a hash table and then using a heap, bucket sort, or a quickselect-style partition can achieve better than O(n log n) time in many cases.",
+ "functionName": "topKFrequent",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  },
+  {
+   "name": "k",
+   "type": "number"
+  }
+ ],
+ "returns": "number[]",
+ "examples": [
+  {
+   "input": "nums = [4, 4, 6, 6, 6, 2, 4, 2], k = 2",
+   "output": "[4, 6]",
+   "explanation": "4 appears 3 times, 6 appears 3 times, and 2 appears 2 times. The two most frequent distinct values are 4 and 6 (their relative order doesn't matter since they're tied), and both must precede 2."
+  },
+  {
+   "input": "nums = [9], k = 1",
+   "output": "[9]",
+   "explanation": "There is only one distinct value in the list, so it is trivially the most frequent, and it is returned as the single-element answer."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 10^5",
+  "-10^4 <= nums[i] <= 10^4",
+  "k is between 1 and the number of distinct values in nums, inclusive",
+  "The number of distinct values in nums is always at least k",
+  "The answer (the set of the k most frequent values) is uniquely determined, though the order among tied values may vary"
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "id": "11",
+ "slug": "find-first-and-last-position-of-element-in-sorted-array",
+ "title": "Find the First and Last Position of a Target in a Sorted Array",
+ "tags": [
+  "Array",
+  "Binary Search"
+ ],
+ "statement": "You are given an array of integers that has been sorted in non-decreasing order, along with a target value. Your task is to determine the range of indices at which the target value appears in the array.\n\nSpecifically, return the index of the first occurrence and the index of the last occurrence of the target value in the array. If the target value does not appear anywhere in the array, indicate that no such range exists.\n\nBecause the array may be very large, an approach that simply scans every element from left to right, while correct, will not be efficient enough. You should design an algorithm that takes advantage of the fact that the array is sorted to locate the boundaries of the target's range faster than a full linear scan.",
+ "functionName": "searchRange",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  },
+  {
+   "name": "target",
+   "type": "int"
+  }
+ ],
+ "returns": "int[]",
+ "examples": [
+  {
+   "input": "nums = [2, 4, 4, 4, 4, 7, 9, 9], target = 4",
+   "output": "[1, 4]",
+   "explanation": "The value 4 first appears at index 1 and last appears at index 4, so the range of indices covering all occurrences of 4 is [1, 4]."
+  },
+  {
+   "input": "nums = [1, 3, 5, 7, 9], target = 6",
+   "output": "[-1, -1]",
+   "explanation": "The value 6 does not exist anywhere in the array, so there is no valid range, and the function reports [-1, -1]."
+  }
+ ],
+ "constraints": [
+  "0 <= nums.length <= 10^5",
+  "-10^9 <= nums[i] <= 10^9",
+  "nums is sorted in non-decreasing order",
+  "-10^9 <= target <= 10^9",
+  "The overall runtime of the algorithm should be O(log n)"
+ ]
+}

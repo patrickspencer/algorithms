@@ -1,0 +1,43 @@
+{
+ "id": "42",
+ "slug": "coin-change",
+ "title": "Fewest Coins to Reach a Target Amount",
+ "tags": [
+  "Array",
+  "Dynamic Programming",
+  "Breadth-First Search",
+  "Knapsack Problem",
+  "Complete Knapsack"
+ ],
+ "statement": "You run a small vending kiosk and stock a fixed set of coin denominations that never runs out, you may use as many of each denomination as you like. A customer needs exact change totaling a specific amount, and you want to hand it over using as few coins as possible.\n\nGiven the list of available denominations and the target amount, determine the smallest number of coins whose values add up exactly to that amount. If there is no way to make the exact amount using the given denominations, report that it is impossible.\n\nDenominations are distinct positive integers, and you have an unlimited supply of each one, so this is an unbounded (complete) knapsack style optimization rather than a 0/1 selection problem.",
+ "functionName": "minCoinsForAmount",
+ "params": [
+  {
+   "name": "coins",
+   "type": "int[]"
+  },
+  {
+   "name": "amount",
+   "type": "int"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "coins = [1, 3, 4], amount = 6",
+   "output": "2",
+   "explanation": "Using two 3-value coins (3 + 3) sums to 6, which uses fewer coins than any other combination such as 3+1+1+1 or 1+1+4."
+  },
+  {
+   "input": "coins = [2, 5], amount = 9",
+   "output": "-1",
+   "explanation": "Every combination of 2s and 5s produces an even number, an odd multiple of... more precisely no combination of 2s and 5s ever sums to 9, so making exact change is impossible."
+  }
+ ],
+ "constraints": [
+  "1 <= coins.length <= 15",
+  "1 <= coins[i] <= 10^4",
+  "All values in coins are distinct",
+  "0 <= amount <= 10^4"
+ ]
+}

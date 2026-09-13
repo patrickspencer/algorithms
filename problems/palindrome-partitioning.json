@@ -1,0 +1,35 @@
+{
+ "id": "8",
+ "slug": "palindrome-partitioning",
+ "title": "All Ways to Split a String into Palindromic Pieces",
+ "tags": [
+  "String",
+  "Dynamic Programming",
+  "Backtracking"
+ ],
+ "statement": "You are given a string made up of lowercase English letters. Your task is to break the string into a sequence of consecutive substrings that, when placed back to back in order, reconstruct the original string exactly, with the added requirement that every individual substring in the sequence must itself read the same forwards and backwards (a palindrome, where single characters always count as palindromes).\n\nSince there can be many valid ways to split the string so that each piece satisfies this palindrome property, you must return every distinct valid partition. Each partition should be represented as an ordered list of the substrings it produces, and the overall result is the collection of all such partitions. The order in which the different partitions appear in your result does not matter, but the substrings within a single partition must stay in left-to-right order matching the original string.",
+ "functionName": "partitionIntoPalindromes",
+ "params": [
+  {
+   "name": "s",
+   "type": "string"
+  }
+ ],
+ "returns": "string[][]",
+ "examples": [
+  {
+   "input": "s = \"racecarful\"",
+   "output": "[[\"racecar\",\"f\",\"u\",\"l\"],[\"r\",\"a\",\"c\",\"e\",\"c\",\"a\",\"r\",\"f\",\"u\",\"l\"]]",
+   "explanation": "The whole word 'racecarful' is not itself a palindrome, but it contains the palindrome 'racecar' as a prefix, leaving 'f', 'u', 'l' as single-character palindromes. The only other valid split breaks every character into its own single-letter piece, since no other multi-letter substring of 'racecarful' happens to be a palindrome."
+  },
+  {
+   "input": "s = \"abba\"",
+   "output": "[[\"abba\"],[\"a\",\"bb\",\"a\"],[\"a\",\"b\",\"b\",\"a\"]]",
+   "explanation": "There are three ways to cut 'abba' so every piece is a palindrome: keep it whole (since 'abba' itself is a palindrome), split off the middle pair 'bb' with single letters on each side, or split every character on its own."
+  }
+ ],
+ "constraints": [
+  "1 <= s.length <= 16",
+  "s consists only of lowercase English letters ('a' to 'z')"
+ ]
+}

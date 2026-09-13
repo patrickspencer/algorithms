@@ -1,0 +1,40 @@
+{
+ "id": "62",
+ "slug": "merge-k-sorted-lists",
+ "title": "Merge k Sorted Linked Lists",
+ "tags": [
+  "Linked List",
+  "Divide and Conquer",
+  "Heap (Priority Queue)",
+  "Merge Sort",
+  "Tournament Sort"
+ ],
+ "statement": "You are given an array of singly linked lists, where each list is already arranged in non-decreasing order of its node values.\n\nYour task is to combine all of these lists into a single singly linked list whose values are also in non-decreasing order, and return the head of this combined list.\n\nEach input list node has a `val` field and a `next` pointer to the following node (or `null`/`None` if it is the last node in that list). The array itself may contain zero or more lists, and any individual list may be empty (represented as a `null`/`None` head).\n\nYou should aim for a solution more efficient than repeatedly merging lists one at a time in a naive linear scan; approaches based on a min-heap, pairwise divide-and-conquer merging, or a tournament-style merge are all acceptable ways to achieve a good time complexity.",
+ "functionName": "mergeKLists",
+ "params": [
+  {
+   "name": "lists",
+   "type": "ListNode[]"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "lists = [[1,4,7],[2,5],[3,6,9,10]]",
+   "output": "[1,2,3,4,5,6,7,9,10]",
+   "explanation": "There are three sorted lists: 1->4->7, 2->5, and 3->6->9->10. Merging all their values while preserving sorted order produces 1,2,3,4,5,6,7,9,10."
+  },
+  {
+   "input": "lists = [[],[0],[]]",
+   "output": "[0]",
+   "explanation": "Two of the three lists are empty and contribute nothing. The only non-empty list, containing just the value 0, becomes the entire result."
+  }
+ ],
+ "constraints": [
+  "0 <= lists.length <= 10^4",
+  "0 <= lists[i].length <= 500",
+  "-10^4 <= lists[i][j] <= 10^4",
+  "Each individual list lists[i] is sorted in non-decreasing order",
+  "The total number of nodes across all lists does not exceed 5 * 10^4"
+ ]
+}

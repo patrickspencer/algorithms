@@ -1,0 +1,36 @@
+{
+ "id": "40",
+ "slug": "perfect-squares",
+ "title": "Fewest Square Tiles to Reach a Target Sum",
+ "tags": [
+  "Math",
+  "Dynamic Programming",
+  "Breadth-First Search",
+  "Knapsack Problem",
+  "Complete Knapsack"
+ ],
+ "statement": "You are given a positive whole number. You may build it up by repeatedly adding perfect squares (1, 4, 9, 16, 25...), and you are allowed to reuse the same square as many times as you like. Determine the smallest number of perfect squares whose sum equals the given number.\n\nFormally, for a target integer n, find the minimum count k such that n can be written as n = s1 + s2 + ... + sk, where each si is a perfect square of a positive integer (1^2, 2^2, 3^2...), and k is as small as possible.",
+ "functionName": "minPerfectSquareCount",
+ "params": [
+  {
+   "name": "n",
+   "type": "integer"
+  }
+ ],
+ "returns": "integer",
+ "examples": [
+  {
+   "input": "n = 11",
+   "output": "3",
+   "explanation": "11 = 9 + 1 + 1 (three squares). No combination of one or two perfect squares sums to 11, so three is the minimum."
+  },
+  {
+   "input": "n = 16",
+   "output": "1",
+   "explanation": "16 itself is a perfect square (4^2), so only one term is needed."
+  }
+ ],
+ "constraints": [
+  "1 <= n <= 10^4"
+ ]
+}

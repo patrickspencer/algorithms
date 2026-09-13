@@ -1,0 +1,35 @@
+{
+ "id": "93",
+ "slug": "maximum-subarray",
+ "title": "Best Run of Daily Profits",
+ "tags": [
+  "Array",
+  "Divide and Conquer",
+  "Dynamic Programming"
+ ],
+ "statement": "You are given a chronological list of integers, where each value represents the net profit or loss recorded on a particular day. A *run* is any contiguous stretch of one or more consecutive days.\n\nYour task is to determine the largest possible total you can obtain by summing the values within a single contiguous run. In other words, find the contiguous run of days whose combined profit/loss is as large as possible, and return that maximum total.\n\nThe list is guaranteed to contain at least one day, so a valid run always exists (even if every day is a loss, you must still pick at least one day).\n\nDesign an efficient solution, a full re-scan for every possible run is not efficient enough for large inputs. Think about how a running best-so-far value, or a divide-and-conquer split of the timeline into halves, can help you avoid redundant recomputation.",
+ "functionName": "bestRun",
+ "params": [
+  {
+   "name": "dailyValues",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "dailyValues = [4, -2, 5, -3, 6, -8, 2]",
+   "output": "10",
+   "explanation": "The run [4, -2, 5, -3, 6] sums to 4 + (-2) + 5 + (-3) + 6 = 10, which is higher than any other contiguous stretch, including extending further to include -8."
+  },
+  {
+   "input": "dailyValues = [-5, -1, -9, -2]",
+   "output": "-1",
+   "explanation": "Every day is a loss, so the best you can do is pick the single least-bad day, -1, since combining any two or more days only makes the total worse."
+  }
+ ],
+ "constraints": [
+  "1 <= dailyValues.length <= 100000",
+  "-10000 <= dailyValues[i] <= 10000"
+ ]
+}

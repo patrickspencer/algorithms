@@ -1,0 +1,35 @@
+{
+ "id": "49",
+ "slug": "jump-game",
+ "title": "Stepping Stones Reachability",
+ "tags": [
+  "Array",
+  "Dynamic Programming",
+  "Greedy"
+ ],
+ "statement": "You are standing at the first position of a row of stepping stones. Each stone has a number painted on it that tells you the maximum number of stones you are allowed to advance forward from that stone in a single move (you may also choose to move fewer stones than that maximum, including zero extra stones if you want to stay put on a move, though ultimately your goal is to keep progressing toward the end).\n\nGiven an array where each element represents the maximum forward reach from that index, determine whether it is possible to travel from the very first stone to the very last stone in the row, moving only forward, using zero or more moves.\n\nReturn a boolean indicating whether reaching the final stone is achievable.",
+ "functionName": "canReachLastStone",
+ "params": [
+  {
+   "name": "reach",
+   "type": "number[]"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "reach = [3,0,0,2,0,4]",
+   "output": "false",
+   "explanation": "Starting at index 0 you can jump up to 3 stones ahead, so the farthest you can reach initially is index 3. From index 1 or 2 the reach is 0, and the only useful path is 0 -> 3, but index 3 also has reach 0, trapping you before reaching index 5."
+  },
+  {
+   "input": "reach = [2,1,1,1,4,0]",
+   "output": "true",
+   "explanation": "One valid path: from index 0 jump to index 2 (using reach 2), then from index 2 jump to index 3, then from index 3 jump to index 4, and finally from index 4 (reach 4) jump directly to index 5, the last stone."
+  }
+ ],
+ "constraints": [
+  "1 <= reach.length <= 100000",
+  "0 <= reach[i] <= 100000"
+ ]
+}

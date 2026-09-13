@@ -1,0 +1,35 @@
+{
+ "id": "71",
+ "slug": "reverse-linked-list",
+ "title": "Flip the Chain",
+ "tags": [
+  "Linked List",
+  "Recursion"
+ ],
+ "statement": "You are given the head node of a singly linked list, where each node stores an integer value and a pointer to the next node in the sequence (the last node points to null/None).\n\nYour task is to reverse the direction of the entire list in place so that the original last node becomes the new head, and traversal order is completely inverted, then return a reference to the new head node.\n\nYou should be able to solve this either iteratively (by walking through the list and re-pointing each node's `next` pointer to its predecessor) or recursively (by reversing the rest of the list first and then fixing up the link for the current node). Either approach is acceptable as a valid solution.\n\nIf the input list is empty (the head is null/None), simply return null/None, since there is nothing to reverse.",
+ "functionName": "reverseList",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "head = [4, 9, 2, 7]",
+   "output": "[7, 2, 9, 4]",
+   "explanation": "The original chain runs 4 -> 9 -> 2 -> 7 -> null. After reversing every link, the chain runs 7 -> 2 -> 9 -> 4 -> null, so node 7 is the new head."
+  },
+  {
+   "input": "head = [5]",
+   "output": "[5]",
+   "explanation": "A list containing a single node is already its own reverse, since there are no other nodes to swap it with."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is in the range [0, 5000]",
+  "-100000 <= Node.val <= 100000",
+  "The list has no cycles"
+ ]
+}

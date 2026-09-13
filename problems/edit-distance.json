@@ -1,0 +1,38 @@
+{
+ "id": "35",
+ "slug": "edit-distance",
+ "title": "Minimum Word Transform Distance",
+ "tags": [
+  "String",
+  "Dynamic Programming"
+ ],
+ "statement": "You are given two words, `source` and `target`, made up of lowercase English letters. In a single step you may transform `source` by doing exactly one of the following operations on it:\n\n1. **Insert** one character at any position.\n2. **Delete** one character from any position.\n3. **Replace** one character with a different character at any position.\n\nYour task is to determine the minimum number of such steps required to turn `source` into `target`. If the two strings are already identical, no steps are needed.\n\nThink of this as measuring how 'far apart' two strings are in terms of the cheapest sequence of single-character edits that bridges them, a notion widely used in spell-checkers, DNA sequence comparison, and diff tools.",
+ "functionName": "minEditSteps",
+ "params": [
+  {
+   "name": "source",
+   "type": "string"
+  },
+  {
+   "name": "target",
+   "type": "string"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "source = \"kitten\", target = \"sitting\"",
+   "output": "3",
+   "explanation": "Replace 'k' with 's' -> \"sitten\"; replace 'e' with 'i' -> \"sittin\"; insert 'g' at the end -> \"sitting\". That's 3 operations, and no cheaper sequence exists."
+  },
+  {
+   "input": "source = \"flaw\", target = \"lawn\"",
+   "output": "2",
+   "explanation": "Delete 'f' -> \"law\"; insert 'n' at the end -> \"lawn\". Two operations suffice, and fewer than 2 cannot make the strings match since they differ in more than one aligned position."
+  }
+ ],
+ "constraints": [
+  "0 <= source.length, target.length <= 1000",
+  "source and target consist only of lowercase English letters"
+ ]
+}

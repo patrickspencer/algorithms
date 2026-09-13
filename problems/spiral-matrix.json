@@ -1,0 +1,37 @@
+{
+ "id": "74",
+ "slug": "spiral-matrix",
+ "title": "Spiral Matrix Traversal",
+ "tags": [
+  "Array",
+  "Matrix",
+  "Simulation"
+ ],
+ "statement": "You are given a rectangular grid of integers represented as a two-dimensional array. Your task is to read out every value in the grid by walking along a spiral path that starts at the top-left corner and moves clockwise: first sweeping across the top row from left to right, then descending the rightmost remaining column from top to bottom, then sweeping the bottom remaining row from right to left, then climbing the leftmost remaining column from bottom to top, and repeating this pattern on the progressively shrinking inner rectangle until every cell has been visited exactly once. Return the sequence of values in the order they were visited, as a single flat list.",
+ "functionName": "spiralOrder",
+ "params": [
+  {
+   "name": "matrix",
+   "type": "number[][]"
+  }
+ ],
+ "returns": "number[]",
+ "examples": [
+  {
+   "input": "matrix = [[10,11,12,13],[14,15,16,17],[18,19,20,21]]",
+   "output": "[10,11,12,13,17,21,20,19,18,14,15,16]",
+   "explanation": "Start along the top row (10,11,12,13). Descend the rightmost column, skipping the corner already used (17,21). Sweep the bottom row right to left, skipping its rightmost cell (20,19,18). Climb the leftmost column, skipping the cells already visited (14). Only the inner segment of row index 1, columns 1-2 remains, so finish with (15,16)."
+  },
+  {
+   "input": "matrix = [[5,6,7],[8,9,10],[11,12,13],[14,15,16]]",
+   "output": "[5,6,7,10,13,16,15,14,11,8,9,12]",
+   "explanation": "Sweep the top row (5,6,7). Descend the last column (10,13,16). Sweep the new bottom row right to left (15,14). Climb the first column back up, stopping before the top row (11,8). The only unvisited cells now form a single vertical strip in the middle column, so continue with the remaining top cell (9) and then the last cell below it (12)."
+  }
+ ],
+ "constraints": [
+  "1 <= number of rows <= 200",
+  "1 <= number of columns <= 200",
+  "(number of rows) * (number of columns) <= 100000",
+  "-1000 <= matrix[i][j] <= 1000"
+ ]
+}

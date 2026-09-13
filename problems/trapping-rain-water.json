@@ -1,0 +1,37 @@
+{
+ "id": "88",
+ "slug": "trapping-rain-water",
+ "title": "Skyline Basin Water Trap",
+ "tags": [
+  "Array",
+  "Two Pointers",
+  "Dynamic Programming",
+  "Stack",
+  "Monotonic Stack"
+ ],
+ "statement": "You are given a row of adjacent vertical bars, each with a fixed width of 1 unit, standing on flat ground. The height of each bar is given by an array of non-negative integers, where each value represents how tall that particular bar is.\n\nImagine it starts raining. Water falls uniformly across the whole skyline, and any water that is not held in place by the bars simply drains away off the edges of the row. Water can only remain resting above a given bar if there are bars tall enough on both its left side and its right side to act as walls holding it in; the amount of water sitting above that position is limited by the shorter of those two bounding walls (minus the height of the bar itself).\n\nYour task is to compute the total volume of water (counted in unit squares, since each bar has width 1) that remains trapped across the entire skyline after the rain stops and all draining has finished.\n\nYou should design an approach that avoids naive recomputation for every position, think about how to track the best-known boundary heights efficiently as you sweep across the array, using techniques such as two pointers, precomputed prefix/suffix maxima, or a monotonic stack.",
+ "functionName": "trapRainWater",
+ "params": [
+  {
+   "name": "heights",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "heights = [3,0,2,0,4]",
+   "output": "7",
+   "explanation": "Above index 1 (height 0), the walls are 3 (left) and 4 (right, considering the whole array), so up to min(3,4)-0 = 3 units could sit there, but the nearest effective right wall before index 4 must be checked via the running max, using full sweep: left maxes = [3,3,3,3,4], right maxes = [4,4,4,4,4]. Water at each index = min(leftMax,rightMax) - height: index0:0, index1: min(3,4)-0=3, index2: min(3,4)-2=1, index3: min(3,4)-0=3, index4:0. Total = 3+1+3 = 7."
+  },
+  {
+   "input": "heights = [1,2,1]",
+   "output": "0",
+   "explanation": "The bars form a strictly rising then falling shape with no basin lower than both neighbors' bounding max on either open side that could still hold water beyond its own height, and since the array has no dip that is enclosed by two taller bars, no water is trapped."
+  }
+ ],
+ "constraints": [
+  "1 <= heights.length <= 2 * 10^4",
+  "0 <= heights[i] <= 10^5"
+ ]
+}

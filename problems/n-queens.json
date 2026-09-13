@@ -1,0 +1,37 @@
+{
+ "id": "5",
+ "slug": "n-queens",
+ "title": "The Peaceful Queens Placement (N-Queens)",
+ "tags": [
+  "Array",
+  "Backtracking",
+  "Algorithm X"
+ ],
+ "statement": "You are given a square chessboard with `n` rows and `n` columns, and you must place exactly `n` queens on this board, one per row, so that no two queens threaten one another.\n\nRecall how a queen moves on a chessboard: it can attack any other piece that shares its row, shares its column, or lies along either of the two diagonals passing through its square. A placement of `n` queens is called *peaceful* if, for every pair of queens on the board, none of these three attack conditions holds.\n\nYour task is to find every distinct peaceful placement of `n` queens on the `n x n` board, given only the value of `n`. Represent each peaceful placement as a grid of `n` strings, each string having length `n`, where the character `'Q'` marks a square holding a queen and the character `'.'` marks an empty square. Two placements are considered distinct if they differ in the position of at least one queen, do not deduplicate placements that are rotations or reflections of each other.\n\nReturn the complete collection of peaceful placements found for the given `n`. If no peaceful placement exists (this happens for small boards such as `n = 2` or `n = 3`), return an empty collection. The order in which the placements appear in your answer does not matter, but every string within a single placement must correctly reflect the row it represents, and rows must be listed from the top of the board to the bottom.",
+ "functionName": "solveNQueens",
+ "params": [
+  {
+   "name": "n",
+   "type": "integer"
+  }
+ ],
+ "returns": "string[][]",
+ "examples": [
+  {
+   "input": "n = 1",
+   "output": "[[\"Q\"]]",
+   "explanation": "With only one row and one column, a single queen trivially has no other queen to conflict with, so the sole 1x1 board with a queen on it is the only peaceful placement."
+  },
+  {
+   "input": "n = 6",
+   "output": "[\n  [\".Q....\",\"...Q..\",\".....Q\",\"Q.....\",\"..Q...\",\"....Q.\"],\n  [\"..Q...\",\".....Q\",\".Q....\",\"....Q.\",\"Q.....\",\"...Q..\"],\n  [\"...Q..\",\"Q.....\",\"....Q.\",\".Q....\",\".....Q\",\"..Q...\"],\n  [\"....Q.\",\"..Q...\",\"Q.....\",\".....Q\",\"...Q..\",\".Q....\"]\n]",
+   "explanation": "On a 6x6 board there are exactly four ways to place six mutually non-threatening queens, one per row. The first listed placement puts queens at columns 2, 4, 6, 1, 3, 5 (reading row 1 through row 6); you can check that no two of these queens share a column and none share a diagonal step, since the column difference between any two rows never equals the row gap between them. The remaining three placements are found the same way with different column orderings."
+  }
+ ],
+ "constraints": [
+  "1 <= n <= 9",
+  "The board is always square, with n rows and n columns",
+  "A queen must be placed in every row, exactly one queen per row",
+  "Placements that are rotations or reflections of one another must be counted and returned separately, not merged"
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "18",
+ "slug": "symmetric-tree",
+ "title": "Mirror Tree Check",
+ "tags": [
+  "Tree",
+  "Depth-First Search",
+  "Breadth-First Search",
+  "Binary Tree"
+ ],
+ "statement": "You are given the root of a binary tree. Determine whether the tree is a mirror image of itself when reflected across a vertical axis through its root, that is, whether the left subtree is a mirror reflection of the right subtree.\n\nFormally, two subtrees are mirror-symmetric if:\n1. Both are empty, or\n2. Both are non-empty, their root values are equal, the left child of the first subtree is a mirror match for the right child of the second subtree, and the right child of the first is a mirror match for the left child of the second.\n\nEach node in the tree holds an integer value. You must return true if the whole tree exhibits this left-right mirror symmetry, and false otherwise. You may solve this using either a recursive traversal or an iterative approach with an explicit queue or stack.",
+ "functionName": "isMirrorSymmetric",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "root = [4,7,7,3,5,5,3]",
+   "output": "true",
+   "explanation": "The tree looks like:\n        4\n       / \\\n      7   7\n     / \\ / \\\n    3  5 5  3\nComparing the two subtrees rooted at the children of 4: values 7 and 7 match, then (3,5) on one side mirrors (5,3) on the other, so the whole tree is symmetric."
+  },
+  {
+   "input": "root = [2,6,6,null,8,null,8]",
+   "output": "false",
+   "explanation": "The tree looks like:\n      2\n     / \\\n    6   6\n     \\   \\\n      8   8\nAlthough both 6-nodes match and both have a single child with value 8, the 8 under the left 6 is a right child while the 8 under the right 6 is also a right child, for a true mirror, one should be a left child and the other a right child. So the tree is not symmetric."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is in the range [0, 2000]",
+  "-1000 <= Node.val <= 1000",
+  "The tree structure is a standard binary tree (each node has at most two children, left and right)"
+ ]
+}

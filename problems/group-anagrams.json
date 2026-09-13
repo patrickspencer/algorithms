@@ -1,0 +1,37 @@
+{
+ "id": "53",
+ "slug": "group-anagrams",
+ "title": "Bucket the Word Shuffles",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "String",
+  "Sorting"
+ ],
+ "statement": "You are given a list of lowercase alphabetic strings. Two strings are considered *shuffle-equivalent* if one can be rearranged into the other by reordering its letters (in other words, they contain exactly the same letters with the same frequencies).\n\nYour task is to organize the input list into groups where every string in a group is shuffle-equivalent to every other string in that same group, and no string in one group is shuffle-equivalent to any string in a different group. Every input string must appear in exactly one group.\n\nThe groups may be returned in any order, and the strings within each group may also be listed in any order.",
+ "functionName": "groupShuffledWords",
+ "params": [
+  {
+   "name": "words",
+   "type": "string[]"
+  }
+ ],
+ "returns": "string[][]",
+ "examples": [
+  {
+   "input": "words = [\"rat\", \"tar\", \"art\", \"cat\", \"act\", \"dog\"]",
+   "output": "[[\"rat\",\"tar\",\"art\"], [\"cat\",\"act\"], [\"dog\"]]",
+   "explanation": "\"rat\", \"tar\", and \"art\" all consist of the letters r, a, t, so they form one group. \"cat\" and \"act\" both consist of a, c, t, forming a second group. \"dog\" shares no letter-multiset match with any other word, so it forms its own singleton group."
+  },
+  {
+   "input": "words = [\"\", \"\", \"a\"]",
+   "output": "[[\"\",\"\"], [\"a\"]]",
+   "explanation": "The two empty strings are trivially shuffle-equivalent (both have zero letters of every kind), so they group together. The single-character string \"a\" has a different letter composition and stands alone."
+  }
+ ],
+ "constraints": [
+  "1 <= words.length <= 10^4",
+  "0 <= words[i].length <= 100",
+  "words[i] consists only of lowercase English letters ('a' to 'z')"
+ ]
+}

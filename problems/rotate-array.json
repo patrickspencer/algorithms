@@ -1,0 +1,40 @@
+{
+ "id": "98",
+ "slug": "rotate-array",
+ "title": "Cycle the Conveyor Belt",
+ "tags": [
+  "Array",
+  "Math",
+  "Two Pointers"
+ ],
+ "statement": "You are given a list of items sitting on a linear conveyor belt, along with a shift amount. The belt operates like a loop: each step moves every item one slot to the right, and whatever falls off the right end reappears at the left end.\n\nYour task is to determine the final arrangement of items after the belt has been shifted by the given number of steps, applying the wrap-around behavior described above. The shift amount may be larger than the number of items on the belt, in which case the effective shift should be taken modulo the belt length.\n\nYou must produce the resulting arrangement by modifying the array in place (i.e., without allocating a second array of the same size to hold the whole result), achieving this using only a constant amount of extra space beyond the input.",
+ "functionName": "cycleConveyorBelt",
+ "params": [
+  {
+   "name": "items",
+   "type": "number[]"
+  },
+  {
+   "name": "shift",
+   "type": "number"
+  }
+ ],
+ "returns": "void",
+ "examples": [
+  {
+   "input": "items = [4, 8, 15, 16, 23], shift = 2",
+   "output": "[16, 23, 4, 8, 15]",
+   "explanation": "Shifting right by 2: the last two elements (16, 23) wrap around to the front, and the remaining elements (4, 8, 15) follow after them."
+  },
+  {
+   "input": "items = [1, 2, 3], shift = 8",
+   "output": "[3, 1, 2]",
+   "explanation": "Since the belt only has 3 slots, an 8-step shift is equivalent to 8 mod 3 = 2 steps, producing the same result as shifting by 2."
+  }
+ ],
+ "constraints": [
+  "1 <= items.length <= 100000",
+  "-2^31 <= items[i] <= 2^31 - 1",
+  "0 <= shift <= 200000"
+ ]
+}

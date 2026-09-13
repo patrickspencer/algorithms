@@ -1,0 +1,36 @@
+{
+ "id": "31",
+ "slug": "longest-valid-parentheses",
+ "title": "Longest Balanced Bracket Run",
+ "tags": [
+  "String",
+  "Dynamic Programming",
+  "Stack",
+  "Bracket Sequences"
+ ],
+ "statement": "You are given a string that contains only the characters '(' and ')'. Your task is to determine the length of the longest contiguous substring that forms a properly balanced parenthesis sequence.\n\nA substring is considered properly balanced if every opening bracket in it can be matched with a later closing bracket in the same substring, following the usual nesting rule: at no point while scanning the substring from left to right should the number of closing brackets seen so far exceed the number of opening brackets seen so far, and by the end of the substring the two counts must be equal.\n\nIf no non-empty substring is balanced, report 0.\n\nYour solution should handle strings that are quite long, so aim for an efficient approach (for example using a stack of indices, or a dynamic-programming table over suffix/prefix validity, rather than checking every substring individually).",
+ "functionName": "longestValidParentheses",
+ "params": [
+  {
+   "name": "s",
+   "type": "string"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "s = \"()(()\"",
+   "output": "2",
+   "explanation": "The substring \"()\" at positions 0-1 is balanced with length 2. The trailing \"(()\" starting at index 2 never closes its outer '(', and the innermost \"()\" inside it also has length 2, so the best we can do overall is 2."
+  },
+  {
+   "input": "s = \")()())()(\"",
+   "output": "4",
+   "explanation": "Ignoring the leading ')' which can't be matched, the substring \"()()\" spanning indices 1-4 is fully balanced and has length 4. The remaining \")()(\" at the end contains only shorter balanced pieces like \"()\" (length 2), so 4 is the maximum."
+  }
+ ],
+ "constraints": [
+  "0 <= s.length <= 3 * 10^4",
+  "s[i] is either '(' or ')'"
+ ]
+}

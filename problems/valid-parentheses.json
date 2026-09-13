@@ -1,0 +1,35 @@
+{
+ "id": "81",
+ "slug": "valid-parentheses",
+ "title": "Balanced Bracket Checker",
+ "tags": [
+  "String",
+  "Stack",
+  "Bracket Sequences"
+ ],
+ "statement": "You are given a string composed only of the six bracket characters: `(`, `)`, `{`, `}`, `[`, and `]`.\n\nDetermine whether the brackets in the string form a properly balanced sequence. A sequence is considered properly balanced if:\n\n1. Every opening bracket has a matching closing bracket of the exact same type, appearing later in the string.\n2. Brackets close in the correct nested order, that is, the most recently opened bracket must be the next one to be closed before any bracket opened before it.\n3. No closing bracket appears without a corresponding open bracket that hasn't already been closed.\n\nImplement a function that returns true if the given string satisfies all of these balance rules, and false otherwise.",
+ "functionName": "isBalancedBrackets",
+ "params": [
+  {
+   "name": "sequence",
+   "type": "string"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "sequence = \"{[]}(){}\"",
+   "output": "true",
+   "explanation": "Each opening bracket is closed in the correct order: '[' closes before '{', then '()' and '{}' each stand alone as complete pairs, so the whole sequence nests and closes correctly."
+  },
+  {
+   "input": "sequence = \"([)]\"",
+   "output": "false",
+   "explanation": "The '(' is opened, then '[' is opened, but ')' appears next and tries to close '(' before '[' has been closed, violating the required nesting order."
+  }
+ ],
+ "constraints": [
+  "0 <= sequence.length <= 10^4",
+  "sequence consists only of the characters '(', ')', '{', '}', '[', and ']'"
+ ]
+}

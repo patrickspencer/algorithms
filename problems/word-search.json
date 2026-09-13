@@ -1,0 +1,45 @@
+{
+ "id": "7",
+ "slug": "word-search",
+ "title": "Grid Word Trace",
+ "tags": [
+  "Array",
+  "String",
+  "Backtracking",
+  "Depth-First Search",
+  "Matrix"
+ ],
+ "statement": "You are given a rectangular grid of single uppercase or lowercase letters and a target word. Determine whether the target word can be traced out by moving through the grid according to the following rules:\n\n- You start by placing your finger on any cell whose letter matches the first letter of the target word.\n- From your current cell, you may step to an adjacent cell that shares an edge with it (up, down, left, or right, diagonal moves are not allowed).\n- Each step must land on a cell whose letter matches the next letter of the target word, in order.\n- No single cell may be reused more than once while tracing a given word (you cannot revisit a cell you've already stepped on during this trace).\n\nYour task is to return true if there exists some path of adjacent, non-repeated cells that spells out the entire target word letter by letter, and false otherwise.",
+ "functionName": "canTraceWord",
+ "params": [
+  {
+   "name": "grid",
+   "type": "character[][]"
+  },
+  {
+   "name": "word",
+   "type": "string"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "grid = [[\"C\",\"A\",\"T\"],[\"D\",\"O\",\"G\"],[\"R\",\"U\",\"N\"]], word = \"CAT\"",
+   "output": "true",
+   "explanation": "Starting at the 'C' in the top-left corner (row 0, col 0), move right to 'A' (row 0, col 1), then right again to 'T' (row 0, col 2). Each move is to an adjacent, unused cell and the letters spell 'CAT' exactly."
+  },
+  {
+   "input": "grid = [[\"C\",\"A\",\"T\"],[\"D\",\"O\",\"G\"],[\"R\",\"U\",\"N\"]], word = \"COG\"",
+   "output": "false",
+   "explanation": "The only 'C' is at (0,0). Its neighbors are 'A' (0,1) and 'D' (1,0), neither of which is 'O', so no path starting with 'C' can continue to 'O' as the second letter. No valid trace exists."
+  }
+ ],
+ "constraints": [
+  "1 <= number of rows in grid <= 6",
+  "1 <= number of columns in grid <= 6",
+  "grid[i][j] is an English letter (uppercase or lowercase)",
+  "1 <= word.length <= 15",
+  "word consists of English letters (uppercase or lowercase)",
+  "Letter matching is case-sensitive"
+ ]
+}

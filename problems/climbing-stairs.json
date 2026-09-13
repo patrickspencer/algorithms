@@ -1,0 +1,35 @@
+{
+ "id": "34",
+ "slug": "climbing-stairs",
+ "title": "Ways to Reach the Top of a Ladder",
+ "tags": [
+  "Math",
+  "Dynamic Programming",
+  "Memoization"
+ ],
+ "statement": "You are standing at the base of a ladder that has a certain number of rungs. In a single move you may step up either 1 rung or 2 rungs. You never step down and you never skip past the top.\n\nGiven the total number of rungs on the ladder, determine how many distinct sequences of moves let you go from the ground (rung 0) to the very top rung. Two sequences are considered different if at any point the size of the step taken (1 or 2) differs between them.\n\nYour solution should compute this efficiently rather than enumerating every sequence explicitly.",
+ "functionName": "countLadderWays",
+ "params": [
+  {
+   "name": "rungs",
+   "type": "int"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "rungs = 4",
+   "output": "5",
+   "explanation": "The valid move sequences are: 1+1+1+1, 1+1+2, 1+2+1, 2+1+1, and 2+2, five ways in total."
+  },
+  {
+   "input": "rungs = 5",
+   "output": "8",
+   "explanation": "The count follows the pattern of summing the ways to reach rung 3 (5 ways) and rung 4 (as computed above, but here for n=4 it's 5... for n=3 it is 3), giving 3 + 5 = 8 total sequences to reach rung 5."
+  }
+ ],
+ "constraints": [
+  "1 <= rungs <= 45",
+  "The answer for the given range of rungs fits comfortably in a 32-bit signed integer."
+ ]
+}

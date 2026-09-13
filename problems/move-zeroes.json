@@ -1,0 +1,36 @@
+{
+ "id": "89",
+ "slug": "move-zeroes",
+ "title": "Shift the Silence",
+ "tags": [
+  "Array",
+  "Two Pointers"
+ ],
+ "statement": "You are given a list of integers. Rearrange the elements **in place** so that every non-zero value keeps its original left-to-right order, and all the zeros end up bunched together at the tail end of the list, also without disturbing their relative order among themselves.\n\nYou must not allocate a second array to build the answer, the reordering has to happen by modifying the given list directly (an in-place algorithm), and you should try to do it in a single left-to-right sweep using O(1) extra space beyond the input.\n\nThe function does not need to return anything meaningful; the caller only cares about the final arrangement of the input list after your function runs.",
+ "functionName": "moveZeroes",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  }
+ ],
+ "returns": "void",
+ "examples": [
+  {
+   "input": "nums = [3, 0, 8, 0, 0, 5]",
+   "output": "[3, 8, 5, 0, 0, 0]",
+   "explanation": "The non-zero values 3, 8, and 5 keep their relative order and are pushed to the front, while the three zeros are pushed to the end, preserving their own relative order."
+  },
+  {
+   "input": "nums = [0, 0, 1]",
+   "output": "[1, 0, 0]",
+   "explanation": "The single non-zero value 1 moves to the front, and the two zeros shift to the back in the same order they appeared."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 10^5",
+  "-2^31 <= nums[i] <= 2^31 - 1",
+  "The rearrangement must be performed in place, modifying nums directly.",
+  "Aim for a single-pass algorithm using O(1) extra space."
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "id": "96",
+ "slug": "single-number",
+ "title": "The Lone Element",
+ "tags": [
+  "Array",
+  "Bit Manipulation"
+ ],
+ "statement": "You are given a list of integers in which every value shows up exactly two times, except for a single value that appears only once. Your job is to identify and return that one value which lacks a duplicate partner in the list.\n\nAn approach using extra memory (such as a hash map or set) is straightforward, but try to devise a solution that scans the list only once and uses no additional data structures proportional to the input size, a bitwise trick can achieve this elegantly.",
+ "functionName": "findLoneElement",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "nums = [7, 3, 7, 9, 3]",
+   "output": "9",
+   "explanation": "7 and 3 each appear twice, leaving 9 as the only value without a matching pair."
+  },
+  {
+   "input": "nums = [12]",
+   "output": "12",
+   "explanation": "With just one element and no duplicate present, that element is itself the answer."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 5 * 10^4",
+  "-10^9 <= nums[i] <= 10^9",
+  "Exactly one element appears once; every other element appears exactly twice"
+ ]
+}

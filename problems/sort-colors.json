@@ -1,0 +1,39 @@
+{
+ "id": "95",
+ "slug": "sort-colors",
+ "title": "Sort the Traffic Light Panel",
+ "tags": [
+  "Array",
+  "Two Pointers",
+  "Sorting",
+  "Quicksort",
+  "Bubble Sort"
+ ],
+ "statement": "You are given a strip of traffic-light bulbs represented as an array. Each bulb has been lit in one of exactly three colors: red, yellow, or green, encoded respectively as the integers 0, 1, and 2.\n\nYour task is to rearrange the bulbs in place so that all the red bulbs (0s) come first, followed by all the yellow bulbs (1s), followed by all the green bulbs (2s).\n\nYou must solve this without calling any built-in sorting function and without allocating a separate array to count or hold values, the rearrangement should be done directly on the given array using a constant amount of extra space, ideally by scanning the array only once.",
+ "functionName": "sortTrafficLights",
+ "params": [
+  {
+   "name": "bulbs",
+   "type": "number[]"
+  }
+ ],
+ "returns": "void",
+ "examples": [
+  {
+   "input": "bulbs = [2,0,1,1,0,2,0]",
+   "output": "[0,0,0,1,1,2,2]",
+   "explanation": "There are three 0s, two 1s, and two 2s in the input, so after rearranging in place the array becomes three 0s followed by two 1s followed by two 2s."
+  },
+  {
+   "input": "bulbs = [1,2,2,1]",
+   "output": "[1,1,2,2]",
+   "explanation": "There are no 0s. The two 1s are moved to the front and the two 2s remain grouped at the end, preserving the required 0-then-1-then-2 ordering."
+  }
+ ],
+ "constraints": [
+  "1 <= bulbs.length <= 3 * 10^4",
+  "bulbs[i] is 0, 1, or 2",
+  "You must modify bulbs in place",
+  "Solutions using only constant extra space are preferred, and a single-pass approach is encouraged"
+ ]
+}

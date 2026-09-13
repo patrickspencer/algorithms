@@ -1,0 +1,44 @@
+{
+ "id": "13",
+ "slug": "search-a-2d-matrix",
+ "title": "Search a 2D Matrix",
+ "tags": [
+  "Array",
+  "Binary Search",
+  "Matrix"
+ ],
+ "statement": "You are given a rectangular grid of integers, `matrix`, with `m` rows and `n` columns. The grid has two special properties:\n\n1. Every row, read from left to right, is sorted in non-decreasing order.\n2. The first value of each row is strictly greater than the last value of the row directly above it (this means that if you were to read the grid row by row from top-left to bottom-right, concatenating all the rows, the entire sequence of numbers would be sorted in non-decreasing order).\n\nGiven an integer `target`, determine whether it appears anywhere in the grid. Return `true` if it does, and `false` otherwise.\n\nBecause of the two properties above, you should be able to solve this far faster than checking every cell one at a time, think about how the whole grid can be treated as a single sorted sequence and searched accordingly.",
+ "functionName": "searchMatrix",
+ "params": [
+  {
+   "name": "matrix",
+   "type": "number[][]"
+  },
+  {
+   "name": "target",
+   "type": "number"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "matrix = [[2,5,8,12],[15,19,23,27],[31,35,40,44]], target = 23",
+   "output": "true",
+   "explanation": "Treating the grid as one sorted list, 2,5,8,12,15,19,23,27,31,35,40,44, the value 23 sits at row index 1, column index 2, so it is found."
+  },
+  {
+   "input": "matrix = [[1,3,5],[7,9,11],[13,15,17]], target = 6",
+   "output": "false",
+   "explanation": "6 would need to fall between 5 and 7 in the flattened sorted sequence, but no cell holds that value, so the search fails."
+  }
+ ],
+ "constraints": [
+  "1 <= matrix.length <= 100 (number of rows, m)",
+  "1 <= matrix[i].length <= 100 (number of columns, n)",
+  "-10^5 <= matrix[i][j] <= 10^5",
+  "Each row is sorted in non-decreasing order",
+  "The first element of each row is greater than the last element of the previous row",
+  "-10^5 <= target <= 10^5",
+  "Your solution should run in O(log(m * n)) time"
+ ]
+}

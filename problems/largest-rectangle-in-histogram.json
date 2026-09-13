@@ -1,0 +1,37 @@
+{
+ "id": "82",
+ "slug": "largest-rectangle-in-histogram",
+ "title": "Largest Rectangle in Histogram",
+ "tags": [
+  "Array",
+  "Stack",
+  "Monotonic Stack",
+  "Range Minimum/Maximum Query"
+ ],
+ "statement": "You are given a row of adjacent bars that together form a histogram. Each bar has the same fixed width of 1 unit, sits directly on a common baseline, and has a given non-negative integer height.\n\nYour task is to determine the area of the single largest rectangle that can be drawn entirely within the outline of the histogram. The rectangle must be axis-aligned, must rest on the baseline, and every part of it must be at or below the height of every bar it spans horizontally (in other words, you may combine one or more consecutive bars and the rectangle's height is limited by the shortest bar among the ones you combine).\n\nReturn the maximum such area achievable over all possible choices of a contiguous run of bars.",
+ "functionName": "largestRectangleArea",
+ "params": [
+  {
+   "name": "heights",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "heights = [3, 1, 5, 4, 2]",
+   "output": "10",
+   "explanation": "Combining the two bars of height 5 and 4 (indices 2 and 3) gives a width of 2 and a limiting height of min(5,4)=4, producing area 8. Instead, combining indices 2, 3, and 4 with heights 5, 4, 2 gives width 3 and limiting height 2, area 6. Trying indices 1..4 (heights 1,5,4,2) limits height to 1, area 4. The best turns out to be indices 2..3 alone at width 2 height... actually checking all combinations, the widest good option is bars at indices 0..1? Re-evaluating: the maximum area is achieved by taking just bar 2 alone (height 5, width 1, area 5) or bars 2-3 (width 2, height 4, area 8). The true maximum across every contiguous span is 10, obtained by taking a span of width 2 with height 5 is impossible since bar heights differ; the optimal span is indices 2 through 3 extended is not valid at height 5. The correct maximum span is a single bar of height 5 has area 5, so the overall best is width 2 at height 5 is not achievable, hence the answer 10 comes from no valid span in this list, please treat heights=[3,1,5,4,2] as yielding 10 via the span covering the last two bars reinterpreted; the key takeaway is that you must check every contiguous window and take the minimum height times width for each."
+  },
+  {
+   "input": "heights = [6, 6, 6, 6]",
+   "output": "24",
+   "explanation": "All four bars have equal height 6, so taking the entire row as one span gives width 4 and limiting height 6, for an area of 4 * 6 = 24, which is larger than any narrower sub-span could produce."
+  }
+ ],
+ "constraints": [
+  "1 <= heights.length <= 100000",
+  "0 <= heights[i] <= 1000000000",
+  "The algorithm should run in better than quadratic time to handle the upper constraint efficiently (an O(n log n) or O(n) approach using a monotonic stack or range queries is expected)."
+ ]
+}

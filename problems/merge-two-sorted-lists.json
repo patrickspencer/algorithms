@@ -1,0 +1,40 @@
+{
+ "id": "61",
+ "slug": "merge-two-sorted-lists",
+ "title": "Merge Two Sorted Linked Lists",
+ "tags": [
+  "Linked List",
+  "Recursion"
+ ],
+ "statement": "You are given the head nodes of two singly linked lists, where each list stores its integer values in non-decreasing order along the chain of nodes.\n\nYour task is to splice the nodes of both lists together into a single linked list that is also sorted in non-decreasing order, and return the head of this new list.\n\nYou should build the result by relinking the existing nodes from the two input lists rather than creating brand-new nodes, think of it as weaving the two chains together, always picking whichever current node has the smaller value to attach next. If one list runs out of nodes before the other, the remaining nodes of the longer list are simply appended in order at the end.\n\nEither input list (or both) may be empty (represented as a null/None head), in which case the merge should still behave sensibly and produce the other list unchanged, or an empty list if both inputs are empty.\n\nYou may solve this iteratively or recursively; a clean recursive formulation (merge the smaller head with the result of merging the rest) is a natural fit for this problem.",
+ "functionName": "mergeSortedLists",
+ "params": [
+  {
+   "name": "list1",
+   "type": "ListNode"
+  },
+  {
+   "name": "list2",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "list1 = [1, 3, 5], list2 = [2, 4, 6]",
+   "output": "[1, 2, 3, 4, 5, 6]",
+   "explanation": "Comparing front values at each step: 1<2 take 1, 3>2 take 2, 3<4 take 3, 5>4 take 4, 5<6 take 5, then only 6 remains and is appended, giving the fully merged ascending sequence."
+  },
+  {
+   "input": "list1 = [], list2 = [0, 0, 7]",
+   "output": "[0, 0, 7]",
+   "explanation": "Since list1 has no nodes, there is nothing to interleave, so the merged result is simply list2's nodes in their original order."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in each of list1 and list2 is between 0 and 5000.",
+  "-100000 <= Node.val <= 100000",
+  "Both list1 and list2 are sorted in non-decreasing order by value.",
+  "The total number of nodes across both lists does not exceed 10000."
+ ]
+}

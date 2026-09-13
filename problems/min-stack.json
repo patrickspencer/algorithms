@@ -1,0 +1,40 @@
+{
+ "id": "83",
+ "slug": "min-stack",
+ "title": "Constant-Time Minimum Stack",
+ "tags": [
+  "Stack",
+  "Design"
+ ],
+ "statement": "Design a stack-like container that supports the usual last-in-first-out operations, but which can also report the smallest value currently stored in the stack at any moment, and must do so in constant time regardless of how many elements are present.\n\nYour structure should support the following operations:\n\n- **push(val)**: place the integer `val` on top of the stack.\n- **pop()**: remove the element currently on top of the stack. It is guaranteed this is only called when the stack is non-empty.\n- **top()**: return the value currently on top of the stack without removing it. Guaranteed non-empty when called.\n- **getMin()**: return the smallest value currently present anywhere in the stack. Guaranteed non-empty when called.\n\nEvery one of these four operations must run in O(1) time in the worst case, you may not scan the stack to find the minimum, and you may not rely on any auxiliary sorted structure that takes more than constant time per operation to maintain.",
+ "functionName": "MinStack",
+ "params": [
+  {
+   "name": "operations",
+   "type": "string[]"
+  },
+  {
+   "name": "arguments",
+   "type": "int[][]"
+  }
+ ],
+ "returns": "any[]",
+ "examples": [
+  {
+   "input": "operations = [\"MinStack\", \"push\", \"push\", \"push\", \"getMin\", \"pop\", \"top\", \"getMin\"]\narguments = [[], [7], [2], [9], [], [], [], []]",
+   "output": "[null, null, null, null, 2, null, 2, 2]",
+   "explanation": "After pushing 7, 2, and 9, the stack (bottom to top) is [7, 2, 9] and the minimum is 2. Popping removes the 9, leaving [7, 2], whose top is 2 and whose minimum is still 2."
+  },
+  {
+   "input": "operations = [\"MinStack\", \"push\", \"push\", \"getMin\", \"pop\", \"getMin\"]\narguments = [[], [5], [5], [], [], []]",
+   "output": "[null, null, null, 5, null, 5]",
+   "explanation": "Two copies of 5 are pushed, so the stack holds [5, 5]. The minimum is 5. After popping one 5, the remaining stack [5] still has minimum 5, showing duplicate minimum values must be tracked correctly."
+  }
+ ],
+ "constraints": [
+  "-2^31 <= val <= 2^31 - 1",
+  "Methods pop, top, and getMin are called only when the stack is non-empty",
+  "At most 3 * 10^4 total calls will be made to push, pop, top, and getMin",
+  "All four operations must run in O(1) worst-case time"
+ ]
+}

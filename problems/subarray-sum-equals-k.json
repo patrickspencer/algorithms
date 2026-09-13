@@ -1,0 +1,40 @@
+{
+ "id": "55",
+ "slug": "subarray-sum-equals-k",
+ "title": "Count Subarrays With a Target Sum",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "Prefix Sum"
+ ],
+ "statement": "You are given a list of integers, which may include positive numbers, negative numbers, and zeros, along with a target integer.\n\nYour task is to determine how many contiguous slices of the list (subarrays) have elements that add up exactly to the target value.\n\nA subarray is defined by choosing a starting index and an ending index (with the start no later than the end) and taking every element between those two positions, inclusive. Two subarrays are considered different if they occupy different index ranges, even if the values they contain happen to be identical. Every non-empty contiguous slice is a valid candidate to check, including the case where a subarray consists of a single element.\n\nReturn the total count of such subarrays whose elements sum to the target.",
+ "functionName": "countTargetSubarrays",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  },
+  {
+   "name": "target",
+   "type": "int"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "nums = [4, -1, 2, 3, -4, 5], target = 5",
+   "output": "3",
+   "explanation": "The qualifying subarrays are [2,3] (sum 5), [4,-1,2,3,-4,5] (sum 5), and [5] (sum 5), giving a total count of 3."
+  },
+  {
+   "input": "nums = [0, 0, 0], target = 0",
+   "output": "6",
+   "explanation": "Every possible contiguous slice sums to 0: the three single-element slices [0], [0], [0]; the two two-element slices [0,0], [0,0]; and the full slice [0,0,0]. That totals 6 subarrays."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 2 * 10^4",
+  "-1000 <= nums[i] <= 1000",
+  "-10^7 <= target <= 10^7"
+ ]
+}

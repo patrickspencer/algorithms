@@ -1,0 +1,40 @@
+{
+ "id": "78",
+ "slug": "minimum-window-substring",
+ "title": "Smallest Covering Substring",
+ "tags": [
+  "Hash Table",
+  "String",
+  "Sliding Window"
+ ],
+ "statement": "You are given two strings, a source text `s` and a pattern `t`. Your task is to find the shortest contiguous slice of `s` that contains every character of `t`, respecting multiplicity, that is, if `t` contains a character more than once, the slice you return must contain at least that many occurrences of that character as well.\n\nMore formally, a candidate window (a contiguous substring of `s`) is called *valid* if, for every distinct character appearing in `t`, the count of that character inside the window is greater than or equal to its count in `t`. Among all valid windows, return the one with the smallest length. If there are multiple valid windows of the same minimal length, return the one that starts first (leftmost). If no valid window exists, return an empty string.\n\nYou should design an algorithm that runs in linear time with respect to the combined length of `s` and `t`, since a brute-force check of every substring would be too slow for large inputs.",
+ "functionName": "minCoveringSubstring",
+ "params": [
+  {
+   "name": "s",
+   "type": "string"
+  },
+  {
+   "name": "t",
+   "type": "string"
+  }
+ ],
+ "returns": "string",
+ "examples": [
+  {
+   "input": "s = \"xyzabcxzyz\", t = \"xyz\"",
+   "output": "\"xyz\"",
+   "explanation": "The very first three characters 'xyz' already contain one 'x', one 'y', and one 'z', matching every character required by t with the shortest possible length of 3. Even though 'xzy' and 'zyz' appear later, none beats this length-3 window, and this one starts first."
+  },
+  {
+   "input": "s = \"aabbccaa\", t = \"aab\"",
+   "output": "\"aab\"",
+   "explanation": "t requires two 'a's and one 'b'. Scanning s, the prefix \"aab\" (indices 0-2) already supplies two 'a's and one 'b', satisfying the requirement in just 3 characters. No shorter or equally short window elsewhere in s does better, so \"aab\" is returned."
+  }
+ ],
+ "constraints": [
+  "1 <= s.length, t.length <= 100000",
+  "s and t consist of uppercase and lowercase English letters",
+  "The algorithm is expected to run in O(|s| + |t|) time"
+ ]
+}

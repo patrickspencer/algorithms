@@ -1,0 +1,36 @@
+{
+ "id": "85",
+ "slug": "daily-temperatures",
+ "title": "Warmer Days Ahead",
+ "tags": [
+  "Array",
+  "Stack",
+  "Monotonic Stack"
+ ],
+ "statement": "You are given a list of temperature readings recorded once per day, listed in chronological order.\n\nFor each day in the list, determine how many days you would have to wait until a strictly warmer day occurs. If no such future day exists (the temperature never rises again for the rest of the recorded period), report a wait of 0 for that day.\n\nReturn a new list of the same length where each position holds the number of days to wait from that corresponding day.\n\nYour solution should aim to avoid a naive comparison of every pair of days, since the list can be quite long; think about how to process the readings in a single pass using an auxiliary structure that tracks days still awaiting a warmer follow-up.",
+ "functionName": "daysUntilWarmer",
+ "params": [
+  {
+   "name": "temperatures",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number[]",
+ "examples": [
+  {
+   "input": "temperatures = [68, 71, 69, 75, 70, 72]",
+   "output": "[1, 2, 1, 0, 1, 0]",
+   "explanation": "Day 0 (68) waits 1 day for day 1 (71), which is warmer. Day 1 (71) must wait until day 3 (75), 2 days later. Day 2 (69) warms up next day at 75. Day 3 (75) is never exceeded afterward, so it's 0. Day 4 (70) waits 1 day for 72. Day 5 (72) has nothing after it, so 0."
+  },
+  {
+   "input": "temperatures = [80, 79, 78, 77]",
+   "output": "[0, 0, 0, 0]",
+   "explanation": "The readings strictly decrease each day, so no day ever sees a warmer day afterward, giving all zeros."
+  }
+ ],
+ "constraints": [
+  "1 <= temperatures.length <= 10^5",
+  "30 <= temperatures[i] <= 130",
+  "All temperature values are integers"
+ ]
+}

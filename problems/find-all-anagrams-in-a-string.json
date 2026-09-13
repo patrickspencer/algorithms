@@ -1,0 +1,39 @@
+{
+ "id": "80",
+ "slug": "find-all-anagrams-in-a-string",
+ "title": "Anagram Window Finder",
+ "tags": [
+  "Hash Table",
+  "String",
+  "Sliding Window"
+ ],
+ "statement": "You are given two strings, a `source` text and a `pattern`. Your task is to locate every starting position in `source` where a contiguous substring of the same length as `pattern` is an anagram of `pattern`, meaning it contains exactly the same letters with exactly the same frequencies, just possibly in a different order.\n\nReturn the list of starting indices (0-indexed) in `source` where such a matching substring begins, listed in increasing order. If no such substring exists, return an empty list.\n\nThe comparison is case-sensitive, and both strings consist only of lowercase English letters.",
+ "functionName": "findAnagramStarts",
+ "params": [
+  {
+   "name": "source",
+   "type": "string"
+  },
+  {
+   "name": "pattern",
+   "type": "string"
+  }
+ ],
+ "returns": "int[]",
+ "examples": [
+  {
+   "input": "source = \"cbaebabacd\", pattern = \"abc\"",
+   "output": "[0, 6]",
+   "explanation": "The substring starting at index 0 is \"cba\", which rearranges to \"abc\". The substring starting at index 6 is \"bac\", which also rearranges to \"abc\". No other length-3 window has the same letter counts as \"abc\"."
+  },
+  {
+   "input": "source = \"aaaaa\", pattern = \"aa\"",
+   "output": "[0, 1, 2, 3]",
+   "explanation": "Every window of length 2 in \"aaaaa\" is \"aa\", which trivially matches the letter frequency of the pattern \"aa\". There are 4 such windows, starting at indices 0 through 3."
+  }
+ ],
+ "constraints": [
+  "1 <= pattern.length <= source.length <= 3 * 10^4",
+  "source and pattern consist of lowercase English letters only"
+ ]
+}

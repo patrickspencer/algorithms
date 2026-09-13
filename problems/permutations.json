@@ -1,0 +1,35 @@
+{
+ "id": "4",
+ "slug": "permutations",
+ "title": "All Possible Arrangements",
+ "tags": [
+  "Array",
+  "Backtracking"
+ ],
+ "statement": "You are given a collection of distinct integers. Your task is to produce every possible way of ordering these numbers, i.e., every permutation of the array.\n\nA permutation is simply a rearrangement of all the elements into some sequence, using each element exactly once. Two permutations are considered different if the order of elements differs at any position.\n\nYou may return the resulting permutations in any order relative to one another, but each individual permutation must list the elements in the order in which they appear (there is no requirement to sort within a permutation).\n\nThink about how to systematically build up each ordering by choosing one unused element at a time, and how to undo a choice so you can try the next alternative, this is the essence of a backtracking approach.",
+ "functionName": "generatePermutations",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int[][]",
+ "examples": [
+  {
+   "input": "nums = [7, 3, 9]",
+   "output": "[[7,3,9],[7,9,3],[3,7,9],[3,9,7],[9,7,3],[9,3,7]]",
+   "explanation": "With three distinct numbers there are 3! = 6 ways to order them; the answer lists all six arrangements (order of the list itself does not matter)."
+  },
+  {
+   "input": "nums = [5, 1]",
+   "output": "[[5,1],[1,5]]",
+   "explanation": "There are only two elements, so 2! = 2 possible orderings: either 5 comes first or 1 comes first."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 6",
+  "-10 <= nums[i] <= 10",
+  "All elements of nums are distinct."
+ ]
+}

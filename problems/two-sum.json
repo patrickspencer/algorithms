@@ -1,0 +1,41 @@
+{
+ "id": "52",
+ "slug": "two-sum",
+ "title": "Pair That Adds Up",
+ "tags": [
+  "Array",
+  "Hash Table"
+ ],
+ "statement": "You are given a list of integers and a target value. Determine the positions of two distinct entries in the list whose values add up exactly to the target.\n\nYou may assume the input is constructed so that exactly one such pair of positions exists, and you must not use the same element twice (i.e., the two positions you return must be different indices, even if the values at those positions happen to be equal). The order of the two indices in your returned answer does not matter, but each index should be reported using its position in the original input list (0-indexed). You do not need to return the values themselves, only their indices. Aim for an approach that is more efficient than checking every possible pair one at a time.",
+ "functionName": "findPairIndices",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  },
+  {
+   "name": "target",
+   "type": "int"
+  }
+ ],
+ "returns": "int[]",
+ "examples": [
+  {
+   "input": "nums = [3, 11, 5, 8], target = 13",
+   "output": "[0, 3]",
+   "explanation": "nums[0] + nums[3] = 3 + 8 = 13, so indices 0 and 3 are returned."
+  },
+  {
+   "input": "nums = [4, 4, 2, 9], target = 8",
+   "output": "[0, 1]",
+   "explanation": "Even though two different entries both equal 4, they occupy distinct positions 0 and 1, and 4 + 4 = 8, so those indices form the answer."
+  }
+ ],
+ "constraints": [
+  "2 <= nums.length <= 10^4",
+  "-10^9 <= nums[i] <= 10^9",
+  "-10^9 <= target <= 10^9",
+  "Exactly one valid pair of indices exists for the given input",
+  "You may not use the same array element (position) twice"
+ ]
+}

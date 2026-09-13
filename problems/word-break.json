@@ -1,0 +1,46 @@
+{
+ "id": "37",
+ "slug": "word-break",
+ "title": "Segmentable String",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "String",
+  "Dynamic Programming",
+  "Trie",
+  "Memoization",
+  "Brute-Force Search"
+ ],
+ "statement": "You are given a single string made up of lowercase letters, along with a curated collection of allowed 'words' (also lowercase letters, each non-empty). Determine whether the given string can be completely reconstructed by concatenating, in some order and with repetition allowed, one or more entries taken from the word collection, using every character of the string exactly once and in its original order.\n\nMore precisely, you must decide if there exists a way to cut the string into one or more contiguous, non-overlapping pieces (a segmentation) such that every resulting piece appears somewhere in the given collection of allowed words. The same word from the collection may be reused as many times as needed, and not every word in the collection needs to be used.\n\nYou do not need to produce the actual segmentation, only report whether at least one valid segmentation exists.",
+ "functionName": "canSegment",
+ "params": [
+  {
+   "name": "text",
+   "type": "string"
+  },
+  {
+   "name": "wordBank",
+   "type": "string[]"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "text = \"pineapplepie\", wordBank = [\"pine\", \"apple\", \"pie\", \"pineapple\"]",
+   "output": "true",
+   "explanation": "The string can be split as \"pine\" + \"apple\" + \"pie\", or alternatively as \"pineapple\" + \"pie\", both are valid segmentations using only words from the bank, so the answer is true."
+  },
+  {
+   "input": "text = \"catsanddog\", wordBank = [\"cats\", \"cat\", \"and\", \"sand\", \"og\"]",
+   "output": "false",
+   "explanation": "Every way of splitting the string leaves at least one leftover fragment that isn't in the bank: \"cats\"+\"and\"+\"og\" fails on \"og\" (not \"dog\"), and \"cat\"+\"sand\"+\"dog\" fails because \"dog\" isn't in the bank either. No arrangement of the given words reconstructs the full string, so the answer is false."
+  }
+ ],
+ "constraints": [
+  "1 <= text.length <= 300",
+  "1 <= wordBank.length <= 1000",
+  "1 <= wordBank[i].length <= 20",
+  "text and every word in wordBank consist only of lowercase English letters",
+  "wordBank may contain duplicate entries, which should be treated as a single distinct word"
+ ]
+}

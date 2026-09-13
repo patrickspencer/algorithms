@@ -1,0 +1,40 @@
+{
+ "id": "60",
+ "slug": "remove-nth-node-from-end-of-list",
+ "title": "Remove the Kth Node Counting Back from the Tail",
+ "tags": [
+  "Linked List",
+  "Two Pointers"
+ ],
+ "statement": "You are given the head of a singly linked list along with an integer k. Your task is to delete the node that sits k positions before the end of the list (so if k equals 1, you remove the very last node; if k equals the list's length, you remove the head itself), and then return the head of the resulting list.\n\nYou must accomplish this by scanning the list a single time from front to back, no double passes and no first computing the total length in a separate traversal. Think about how two pointers, kept a fixed distance apart as they move down the list together, can help you locate the correct node to unlink without ever knowing the list's length in advance.\n\nYou may assume k is always valid for the given list (that is, 1 <= k <= length of the list), so you never need to handle an out-of-range request.",
+ "functionName": "removeKthFromEnd",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  },
+  {
+   "name": "k",
+   "type": "int"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "head = [4, 8, 15, 16, 23, 42], k = 2",
+   "output": "[4, 8, 15, 16, 42]",
+   "explanation": "Counting back from the tail, the 2nd node is the one holding 23 (42 is 1st, 23 is 2nd). Removing it leaves 4 -> 8 -> 15 -> 16 -> 42."
+  },
+  {
+   "input": "head = [7], k = 1",
+   "output": "[]",
+   "explanation": "The list has a single node, and k = 1 refers to that very node (it is simultaneously the head and the tail). Deleting it leaves an empty list."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is between 1 and 3 * 10^4.",
+  "-1000 <= Node.val <= 1000",
+  "1 <= k <= number of nodes in the list",
+  "Follow-up goal: solve it in a single traversal of the list using O(1) extra space."
+ ]
+}

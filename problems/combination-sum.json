@@ -1,0 +1,41 @@
+{
+ "id": "3",
+ "slug": "combination-sum",
+ "title": "Ingredient Batches for a Target Weight",
+ "tags": [
+  "Array",
+  "Backtracking"
+ ],
+ "statement": "You are stocking a spice cabinet and have a shelf of distinct spice packets, each with its own fixed weight in grams. You may grab as many packets of any single spice as you like (including zero, and you're allowed to reuse the same spice type multiple times since the shelf is always restocked), and you want to find every distinct combination of packets whose weights add up to exactly a target amount.\n\nReturn all such combinations. Each combination should be reported as a multiset of the spice weights used (order within a combination does not matter, so list each combination's weights in non-decreasing order), and no two combinations in your result should be identical multisets of weights. The overall order of the combinations in your returned list does not matter.\n\nAssume the given list of available spice weights contains no duplicate values.",
+ "functionName": "combinationSum",
+ "params": [
+  {
+   "name": "candidates",
+   "type": "number[]"
+  },
+  {
+   "name": "target",
+   "type": "number"
+  }
+ ],
+ "returns": "number[][]",
+ "examples": [
+  {
+   "input": "candidates = [3,5,8], target = 11",
+   "output": "[[3,3,5],[3,8]]",
+   "explanation": "3+3+5 = 11 and 3+8 = 11 are the only two ways to reach 11 using unlimited copies of 3, 5, and 8; for example 5+5=10 and 8+3=11 (already counted), and using 5 three times overshoots (15), so no other combination works."
+  },
+  {
+   "input": "candidates = [2,4,6], target = 5",
+   "output": "[]",
+   "explanation": "Every candidate is even, and any sum of even numbers is even, so an odd target like 5 can never be reached; the result is an empty list."
+  }
+ ],
+ "constraints": [
+  "1 <= candidates.length <= 30",
+  "2 <= candidates[i] <= 40",
+  "All elements of candidates are distinct",
+  "1 <= target <= 500",
+  "The number of distinct combinations that sum to target will fit comfortably within typical memory limits for this problem"
+ ]
+}

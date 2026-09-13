@@ -1,0 +1,37 @@
+{
+ "id": "87",
+ "slug": "3sum",
+ "title": "Triple Sum to Zero",
+ "tags": [
+  "Array",
+  "Two Pointers",
+  "Sorting"
+ ],
+ "statement": "You are given a collection of integers, possibly containing duplicates and negative values. Your task is to find every distinct combination of three numbers from the collection whose values add up to exactly zero.\n\nA combination is considered distinct based on the multiset of values it uses, not on which specific array positions were chosen, so if the same three values could be picked in more than one way (for example because a value repeats in the input), that triple of values should only appear once in your final answer. The three numbers within a returned triple do not need to be listed in any particular order relative to each other, but to make comparison and output deterministic, each triple should be listed with its values sorted from smallest to largest, and the overall list of triples may be returned in any order.\n\nIf no such triple exists, report that there are none. Aim for a solution more efficient than the brute-force approach of checking every possible group of three (which takes cubic time); a well-known technique involves sorting the input first and then using a two-pointer sweep for each fixed first element to find matching pairs in linear time, giving an overall quadratic-time algorithm.",
+ "functionName": "findZeroSumTriplets",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int[][]",
+ "examples": [
+  {
+   "input": "nums = [-4, -1, -1, 0, 1, 2]",
+   "output": "[[-1, -1, 2], [-1, 0, 1]]",
+   "explanation": "Checking combinations: (-1) + (-1) + 2 = 0 and (-1) + 0 + 1 = 0 are the only two distinct value-triples that sum to zero. Note that -1 appears twice in the array, allowing it to be used twice in the first triple, but the pair of -1's combined with the leftover -4 does not sum to zero, so that combination is excluded."
+  },
+  {
+   "input": "nums = [3, 0, -2, -1, 1, 2]",
+   "output": "[[-2, -1, 3], [-2, 0, 2], [-1, 0, 1]]",
+   "explanation": "Three separate triples of distinct values each sum to zero: -2-1+3=0, -2+0+2=0, and -1+0+1=0. No two of the output triples use the exact same multiset of numbers, so all three are kept."
+  }
+ ],
+ "constraints": [
+  "3 <= nums.length <= 3000",
+  "-100000 <= nums[i] <= 100000",
+  "The order of triples in the returned result does not matter, but each triple's three values must be listed in non-decreasing order",
+  "No duplicate triples (by value content) should appear in the result"
+ ]
+}

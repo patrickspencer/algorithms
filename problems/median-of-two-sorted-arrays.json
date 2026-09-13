@@ -1,0 +1,42 @@
+{
+ "id": "9",
+ "slug": "median-of-two-sorted-arrays",
+ "title": "Median of Two Sorted Arrays",
+ "tags": [
+  "Array",
+  "Binary Search",
+  "Divide and Conquer"
+ ],
+ "statement": "You are given two sequences of integers that have each already been sorted into non-decreasing order. If you were to merge the two sequences into a single sorted list (without actually needing to build that list), you must determine the median value of the combined data.\n\nRecall that the median of a sorted list of N numbers is defined as follows: if N is odd, it is the single value sitting at the middle position; if N is even, it is the average of the two values sitting at the two middle positions.\n\nThe two input sequences may differ in length, and either one (but not both) may be empty. Your solution should avoid the brute-force approach of physically merging the arrays and should instead achieve a running time that is logarithmic in the size of the smaller array, typically by using a binary-search or divide-and-conquer strategy that searches for a valid partition point across both arrays simultaneously.\n\nReturn the median as a floating-point number (even when it turns out to be a whole number).",
+ "functionName": "findMedianSortedArrays",
+ "params": [
+  {
+   "name": "firstArray",
+   "type": "number[]"
+  },
+  {
+   "name": "secondArray",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "firstArray = [3, 8, 15], secondArray = [4, 9, 12, 20]",
+   "output": "9.0",
+   "explanation": "Merging the two sorted arrays gives [3, 4, 8, 9, 12, 15, 20], which has 7 elements. The middle element (4th position) is 9, so the median is 9.0."
+  },
+  {
+   "input": "firstArray = [], secondArray = [2, 6, 7, 10]",
+   "output": "6.5",
+   "explanation": "The first array is empty, so the merged sequence is just [2, 6, 7, 10], which has 4 elements. The two middle values are 6 and 7, and their average is (6 + 7) / 2 = 6.5."
+  }
+ ],
+ "constraints": [
+  "0 <= firstArray.length, secondArray.length <= 100000",
+  "firstArray.length + secondArray.length >= 1",
+  "-1000000 <= firstArray[i], secondArray[i] <= 1000000",
+  "Both firstArray and secondArray are sorted in non-decreasing order",
+  "The algorithm should run in O(log(min(firstArray.length, secondArray.length))) time"
+ ]
+}

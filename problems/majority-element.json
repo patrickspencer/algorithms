@@ -1,0 +1,39 @@
+{
+ "id": "97",
+ "slug": "majority-element",
+ "title": "The Dominant Vote",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "Divide and Conquer",
+  "Sorting",
+  "Counting",
+  "Boyer\u2013Moore Majority Vote Algorithm"
+ ],
+ "statement": "You are given an array of integers representing votes cast in a small election, where each integer is a candidate ID. It is guaranteed that exactly one candidate received *more than half* of all the votes (a strict majority).\n\nYour task is to determine which candidate ID that is, that is, find the element that appears in more than \u230an / 2\u230b positions of the array, where n is the total number of votes.\n\nYou should aim for a solution that runs faster than the naive approach of counting every distinct value with nested loops; in particular, think about how you could solve it in a single linear pass using constant extra space (the Boyer-Moore Majority Vote technique), or contrast that against sorting-based or hash-map-based counting approaches.",
+ "functionName": "majorityElement",
+ "params": [
+  {
+   "name": "votes",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "votes = [7, 7, 3, 7, 2, 7, 7]",
+   "output": "7",
+   "explanation": "Candidate 7 appears 5 times out of 7 total votes, which is more than \u230a7/2\u230b = 3, so 7 is the majority element."
+  },
+  {
+   "input": "votes = [4, 4, 9, 9, 9]",
+   "output": "9",
+   "explanation": "Candidate 9 appears 3 times out of 5 total votes, which is more than \u230a5/2\u230b = 2, so 9 is the majority element."
+  }
+ ],
+ "constraints": [
+  "1 <= votes.length <= 5 * 10^4",
+  "-10^9 <= votes[i] <= 10^9",
+  "It is guaranteed that a majority element (appearing more than n/2 times) always exists in votes."
+ ]
+}

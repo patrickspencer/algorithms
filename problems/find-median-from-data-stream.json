@@ -1,0 +1,42 @@
+{
+ "id": "57",
+ "slug": "find-median-from-data-stream",
+ "title": "Running Median of a Live Data Feed",
+ "tags": [
+  "Two Pointers",
+  "Design",
+  "Sorting",
+  "Heap (Priority Queue)",
+  "Data Stream"
+ ],
+ "statement": "You are building a monitoring tool that ingests a continuous stream of integer readings (for example, sensor measurements arriving one at a time) and must be able to report the current median of every value seen so far at any point in the stream.\n\nDesign a component that supports two kinds of operations, applied in order:\n\n1. **Insert** a new integer reading into the stream.\n2. **Query** the median of all readings inserted up to that moment.\n\nRecall that the median of a multiset of numbers is defined as follows: sort the numbers; if the count is odd, the median is the single middle value; if the count is even, the median is the average of the two middle values.\n\nYour solution must process a long sequence of insert and query operations efficiently, a naive approach that re-sorts the entire collection on every query is too slow. You are given the full sequence of operations as a list, where each operation is either an insertion (accompanied by the value to insert) or a query (which produces an output). Return the list of outputs produced by the query operations, in the order they occur.",
+ "functionName": "runMedianStream",
+ "params": [
+  {
+   "name": "operations",
+   "type": "List[List[Union[str, int]]]"
+  }
+ ],
+ "returns": "List[float]",
+ "examples": [
+  {
+   "input": "operations = [[\"insert\", 5], [\"insert\", 2], [\"query\"], [\"insert\", 9], [\"query\"], [\"insert\", 1], [\"query\"]]",
+   "output": "[3.5, 5.0, 3.5]",
+   "explanation": "After inserting 5 and 2, the stream is {2,5}; the median of two values is their average, (2+5)/2 = 3.5. After inserting 9, the stream is {2,5,9}; with an odd count the median is the middle value, 5. After inserting 1, the stream is {1,2,5,9}; the two middle values are 2 and 5, giving a median of 3.5 again."
+  },
+  {
+   "input": "operations = [[\"insert\", 7], [\"query\"], [\"insert\", 7], [\"query\"], [\"insert\", 3], [\"query\"]]",
+   "output": "[7.0, 7.0, 7.0]",
+   "explanation": "With a single reading {7}, the median is 7. After a duplicate insert, the stream {7,7} has both middle values equal to 7, so the average is still 7. Adding 3 gives {3,7,7}; the middle value of the sorted list is 7."
+  }
+ ],
+ "constraints": [
+  "1 <= operations.length <= 5 * 10^4",
+  "Each operation is either [\"insert\", val] or [\"query\"]",
+  "-10^5 <= val <= 10^5 for every insert operation",
+  "At least one \"insert\" operation occurs before the first \"query\" operation",
+  "The number of \"query\" operations can be up to the total number of operations",
+  "Insertions and queries must be processed online, in the given order, without knowledge of future operations",
+  "Aim for O(log n) time per insertion and O(1) time per query, where n is the number of values inserted so far"
+ ]
+}

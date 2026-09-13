@@ -1,0 +1,42 @@
+{
+ "id": "100",
+ "slug": "find-the-duplicate-number",
+ "title": "Find the Duplicate Number",
+ "tags": [
+  "Array",
+  "Two Pointers",
+  "Binary Search",
+  "Bit Manipulation",
+  "Pigeonhole Principle",
+  "Floyd's Cycle Finding Algorithm"
+ ],
+ "statement": "You are given a list of `n + 1` integers, where every value in the list falls somewhere in the inclusive range `[1, n]`. Because there are more entries than distinct possible values, at least one number from that range must appear more than once in the list, although it might appear many times, and there could be several different numbers that repeat.\n\nYour task is to identify **any one** value that occurs more than once, using only the list itself.\n\nTo make the problem well-posed and solvable efficiently, your solution must satisfy all of the following:\n\n- You may not modify the input array (it must be treated as read-only).\n- You may use only O(1) extra space beyond the input.\n- The running time must be better than O(n^2), an O(n log n) or O(n) approach is expected.\n\nThink about how the values and their indices interact: since every element points to a position within the same range, you can treat the array as describing a function from indices to values, and reason about where that function must eventually loop back on itself.",
+ "functionName": "findDuplicate",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "nums = [3, 1, 4, 2, 2]",
+   "output": "2",
+   "explanation": "The array has 5 elements drawn from the range [1, 4], so by the pigeonhole principle at least one value must repeat. Here 2 appears twice, so 2 is returned."
+  },
+  {
+   "input": "nums = [5, 3, 1, 4, 2, 3]",
+   "output": "3",
+   "explanation": "The array has 6 elements drawn from the range [1, 5]. Scanning the values shows that 3 is the one that appears twice (at positions 1 and 5), so 3 is the answer."
+  }
+ ],
+ "constraints": [
+  "1 <= n <= 10^5",
+  "nums.length == n + 1",
+  "1 <= nums[i] <= n",
+  "All integers in nums appear at least once, and exactly one value is guaranteed to be duplicated (it may appear more than twice)",
+  "The input array must not be modified",
+  "Your algorithm should use O(1) additional space and run in better than O(n^2) time"
+ ]
+}

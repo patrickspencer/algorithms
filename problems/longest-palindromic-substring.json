@@ -1,0 +1,36 @@
+{
+ "id": "30",
+ "slug": "longest-palindromic-substring",
+ "title": "Longest Palindromic Substring",
+ "tags": [
+  "Two Pointers",
+  "String",
+  "Dynamic Programming",
+  "Manacher"
+ ],
+ "statement": "You are given a string made up of printable characters. A palindrome is a sequence of characters that reads the same forward and backward (for example, \"level\" or \"a\").\n\nYour task is to find a contiguous run of characters (a substring) from the given string that is a palindrome and is as long as possible. If there are multiple substrings that achieve the maximum length, you may return any one of them.\n\nNote that a substring must occupy consecutive positions in the original string, you cannot skip or reorder characters. Every single character on its own counts as a palindrome of length one, so a valid answer always exists.\n\nThink about how to avoid recomputing the same palindrome checks over and over: naive brute force checks every possible substring, but there are smarter approaches using dynamic programming, expanding outward from each possible center, or the linear-time Manacher's algorithm.",
+ "functionName": "longestPalindrome",
+ "params": [
+  {
+   "name": "s",
+   "type": "string"
+  }
+ ],
+ "returns": "string",
+ "examples": [
+  {
+   "input": "s = \"forgeeksskeegfor\"",
+   "output": "\"geeksskeeg\"",
+   "explanation": "The substring \"geeksskeeg\" reads the same forward and backward and is the longest such palindromic run in the string; shorter palindromes like \"eksske\" also exist inside it but are not maximal."
+  },
+  {
+   "input": "s = \"banana\"",
+   "output": "\"anana\"",
+   "explanation": "\"anana\" is a palindrome of length 5 and is the longest one present. Note that \"banab\" is not a valid answer since it does not appear as a contiguous substring of \"banana\"."
+  }
+ ],
+ "constraints": [
+  "1 <= s.length <= 1000",
+  "s consists only of printable ASCII characters (letters, digits, punctuation, and spaces)"
+ ]
+}

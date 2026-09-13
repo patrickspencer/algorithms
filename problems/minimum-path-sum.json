@@ -1,0 +1,37 @@
+{
+ "id": "33",
+ "slug": "minimum-path-sum",
+ "title": "Cheapest Descent Through a Cost Grid",
+ "tags": [
+  "Array",
+  "Dynamic Programming",
+  "Matrix"
+ ],
+ "statement": "You are given a rectangular grid of non-negative integers, where each cell represents the cost of stepping onto that cell. Starting at the top-left cell of the grid, you want to reach the bottom-right cell. At each move you may only step to the cell directly to the right or the cell directly below your current position (no moving up, left, or diagonally).\n\nYour task is to determine the minimum possible total cost of a path from the top-left cell to the bottom-right cell, where the total cost of a path is the sum of the costs of every cell visited along the way, including both the starting cell and the ending cell.\n\nAssume the grid always has at least one row and one column.",
+ "functionName": "minPathSum",
+ "params": [
+  {
+   "name": "grid",
+   "type": "number[][]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "grid = [[2,3,1],[5,6,1],[4,2,1]]",
+   "output": "8",
+   "explanation": "One cheapest route is 2 -> 3 -> 1 -> 1 -> 1, moving right, right, down, down, giving a total cost of 2+3+1+1+1 = 8. No path from top-left to bottom-right costs less."
+  },
+  {
+   "input": "grid = [[7,2],[1,9]]",
+   "output": "10",
+   "explanation": "The two possible paths are 7 -> 2 -> 9 (cost 18) and 7 -> 1 -> 9 (cost 17)... actually moving down then right gives 7+1+9=17, and right then down gives 7+2+9=18, so the minimum is 17."
+  }
+ ],
+ "constraints": [
+  "1 <= grid.length <= 200",
+  "1 <= grid[i].length <= 200",
+  "All rows of grid have the same length",
+  "0 <= grid[i][j] <= 100"
+ ]
+}

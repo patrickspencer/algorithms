@@ -1,0 +1,39 @@
+{
+ "id": "32",
+ "slug": "unique-paths",
+ "title": "Grid Explorer Routes",
+ "tags": [
+  "Math",
+  "Dynamic Programming",
+  "Combinatorics"
+ ],
+ "statement": "A small delivery robot starts at the top-left corner of a rectangular warehouse grid that has `m` rows and `n` columns. The robot must reach the bottom-right corner of the grid, and it can only move in two directions at each step: one cell to the right, or one cell downward. Diagonal moves, upward moves, and leftward moves are not allowed, and the robot may not leave the boundaries of the grid.\n\nGiven the dimensions of the grid, determine how many distinct paths the robot can take from the top-left corner to the bottom-right corner.\n\nYou may solve this using dynamic programming (building up the number of ways to reach each cell) or by recognizing the combinatorial formula that counts the number of ways to arrange a fixed sequence of right-moves and down-moves.",
+ "functionName": "uniquePaths",
+ "params": [
+  {
+   "name": "m",
+   "type": "int"
+  },
+  {
+   "name": "n",
+   "type": "int"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "m = 3, n = 2",
+   "output": "3",
+   "explanation": "The grid has 3 rows and 2 columns. Labeling moves as R (right) and D (down), the robot needs exactly 1 right move and 2 down moves total, in some order. The distinct orderings are DDR, DRD, and RDD, giving 3 total paths."
+  },
+  {
+   "input": "m = 1, n = 5",
+   "output": "1",
+   "explanation": "With only 1 row, the robot has no choice but to move right 4 times in a row to reach the far end of the single row, so there is exactly 1 possible path."
+  }
+ ],
+ "constraints": [
+  "1 <= m, n <= 100",
+  "The answer is guaranteed to fit within a 32-bit signed integer."
+ ]
+}

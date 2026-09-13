@@ -1,0 +1,38 @@
+{
+ "id": "72",
+ "slug": "palindrome-linked-list",
+ "title": "Mirror Chain Check",
+ "tags": [
+  "Linked List",
+  "Two Pointers",
+  "Stack",
+  "Recursion"
+ ],
+ "statement": "You are given the head node of a singly linked list where each node stores a single integer value. Determine whether the sequence of values formed by traversing the list from head to tail reads the same forward and backward, that is, whether the list is a palindrome.\n\nYou should try to solve this using only constant extra space beyond the input list (for example, by locating the middle of the list with a fast/slow pointer approach and reversing the second half in place for comparison), though solutions using auxiliary storage such as an array, stack, or recursion are also acceptable for partial credit on the space-efficiency aspect.\n\nReturn a boolean indicating whether the list's values form a palindrome.",
+ "functionName": "isPalindromeList",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "head = [4, 1, 9, 1, 4]",
+   "output": "true",
+   "explanation": "Reading the values front-to-back gives 4,1,9,1,4, which is identical when reversed, so the list is a palindrome."
+  },
+  {
+   "input": "head = [7, 3, 5, 2]",
+   "output": "false",
+   "explanation": "Reversed, the sequence would be 2,5,3,7, which does not match the original order 7,3,5,2, so it is not a palindrome."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is in the range [1, 100000]",
+  "0 <= Node.val <= 9",
+  "The list is singly linked (no cycles)",
+  "Aim for O(n) time; O(1) extra space is preferred but O(n) auxiliary space solutions are acceptable"
+ ]
+}

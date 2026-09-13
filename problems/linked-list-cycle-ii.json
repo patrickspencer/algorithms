@@ -1,0 +1,22 @@
+{
+ "id": "67",
+ "slug": "linked-list-cycle-ii",
+ "title": "Linked List Cycle II",
+ "tags": [
+  "Hash Table",
+  "Linked List",
+  "Two Pointers",
+  "Floyd's Cycle Finding Algorithm"
+ ],
+ "statement": "You are given the head of a singly linked list where each node stores an integer value and a reference to the next node. Somewhere in this list, the 'next' pointer of the final node might not be null, instead it might loop back and point to some earlier node in the list, creating a cycle rather than a proper termination at null.\n\nYour task is to determine whether such a cycle exists, and if it does, to return the specific node at which the cycle begins (i.e., the node that is pointed to twice: once from the node before it in the normal traversal order, and once from the last node in the cyclic loop). If the list terminates normally with a null reference and contains no cycle, return null instead.\n\nYou may not modify the structure of the list (e.g., by severing links or altering node values) to solve this, and ideally your solution should use only constant extra memory rather than an auxiliary data structure to track visited nodes, although a solution using extra space is also acceptable.",
+ "functionName": "detectCycleStart",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": null,
+ "constraints": []
+}

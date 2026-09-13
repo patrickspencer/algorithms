@@ -1,0 +1,39 @@
+{
+ "id": "23",
+ "slug": "flatten-binary-tree-to-linked-list",
+ "title": "Flatten Binary Tree to Linked List",
+ "tags": [
+  "Linked List",
+  "Stack",
+  "Tree",
+  "Depth-First Search",
+  "Binary Tree"
+ ],
+ "statement": "You are given the root of a binary tree. Rewire the tree **in place** so that it becomes a singly linked list built entirely out of the tree's own nodes, where the list order matches the tree's pre-order traversal (visit a node, then its left subtree, then its right subtree).\n\nAfter the rewiring:\n- Every node's `left` pointer must be `null`.\n- Every node's `right` pointer must point to the node that comes next in pre-order order (or `null` for the last node).\n- No new nodes may be created, you must reuse the existing node objects and simply change their `left`/`right` links.\n\nA `TreeNode` has the fields `val`, `left`, and `right`. The tree may be empty, in which case there is nothing to flatten.",
+ "functionName": "flattenTree",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "TreeNode",
+ "examples": [
+  {
+   "input": "root = [1,2,5,3,4,null,6]  (tree: 1 has left 2 and right 5; 2 has left 3 and right 4; 5 has right 6)",
+   "output": "[1,null,2,null,3,null,4,null,5,null,6]  (a right-only chain: 1 -> 2 -> 3 -> 4 -> 5 -> 6, every left pointer null)",
+   "explanation": "The pre-order visiting sequence of the original tree is 1, 2, 3, 4, 5, 6. After flattening, each node's right pointer is set to the next node in that sequence and every left pointer is cleared, producing a straight chain in that exact order."
+  },
+  {
+   "input": "root = [1,2,null,3]  (tree: 1's left child is 2; 2's left child is 3; no right children anywhere)",
+   "output": "[1,null,2,null,3]  (chain: 1 -> 2 -> 3)",
+   "explanation": "Pre-order here is 1, 2, 3 even though the original tree only had left children. Flattening moves node 3 to hang off node 2's right pointer and node 2 off node 1's right pointer, clearing all left links along the way."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is between 0 and 2000.",
+  "-100 <= Node.val <= 100",
+  "The transformation must be performed in place (only pointer rewiring, no new node allocation).",
+  "Aim for O(n) time; using O(h) or O(n) extra space (e.g., a stack) for the traversal is acceptable, though an O(1) extra-space solution exists."
+ ]
+}

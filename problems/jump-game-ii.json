@@ -1,0 +1,36 @@
+{
+ "id": "48",
+ "slug": "jump-game-ii",
+ "title": "Fewest Hops to the Last Pad",
+ "tags": [
+  "Array",
+  "Dynamic Programming",
+  "Greedy"
+ ],
+ "statement": "You are standing on the first lily pad of a straight row of pads laid out across a pond. You are given an array of non-negative integers where the value at each index tells you the farthest number of pads forward you are allowed to leap from that position in a single hop (you may also choose to land on any pad closer than that maximum).\n\nStarting on the pad at index 0, determine the smallest number of hops needed to reach the pad at the last index. You may assume that reaching the final pad is always achievable from the starting position given the input.\n\nWrite a function that computes this minimum hop count.",
+ "functionName": "minJumps",
+ "params": [
+  {
+   "name": "reach",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "reach = [3,1,1,2,0,4]",
+   "output": "2",
+   "explanation": "From index 0 you can leap up to 3 pads forward. Jumping to index 1 only lets you reach index 2 next, which is a dead end (its value is 1, landing on index 4, the zero trap). Instead jump from index 0 to index 3 (a valid hop since 3 <= 3), then from index 3 (value 2) jump straight to index 5, the last pad. Total: 2 hops."
+  },
+  {
+   "input": "reach = [2,4,1,1,1,1]",
+   "output": "2",
+   "explanation": "From index 0 (value 2) jump to index 2... but a better first move is jumping to index 1, since its value 4 lets you leap all the way to index 5 next. So: index 0 -> index 1 -> index 5, using 2 hops."
+  }
+ ],
+ "constraints": [
+  "1 <= reach.length <= 10^4",
+  "0 <= reach[i] <= 1000",
+  "It is guaranteed that you can always reach the last index from index 0"
+ ]
+}

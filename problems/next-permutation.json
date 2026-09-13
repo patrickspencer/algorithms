@@ -1,0 +1,37 @@
+{
+ "id": "91",
+ "slug": "next-permutation",
+ "title": "Next Lexicographic Arrangement",
+ "tags": [
+  "Array",
+  "Two Pointers"
+ ],
+ "statement": "You are given a sequence of integers arranged in a specific order, which represents one particular arrangement (permutation) among all the ways the same multiset of numbers could be ordered. Your task is to rearrange the numbers, in place, into the arrangement that would come immediately after the given one if all possible arrangements of that multiset were listed in increasing lexicographic order.\n\nTo find this 'next' arrangement:\n1. Scan from the right end of the sequence to find the longest non-increasing suffix (i.e., find the rightmost position where the value is smaller than the value immediately to its right).\n2. If no such position exists, the entire sequence is already the last (fully descending) arrangement possible, so wrap around to the very first (fully ascending) arrangement by reversing the whole sequence.\n3. Otherwise, in that non-increasing suffix, find the smallest value that is still strictly greater than the value at the pivot position found in step 1, swap the two, and then reverse the suffix so it becomes ascending, this produces the smallest arrangement that is still larger than the original.\n\nThe transformation must be performed using only the given array's storage (constant extra space beyond a few temporary variables), and it must run in linear time relative to the length of the sequence.",
+ "functionName": "nextPermutation",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  }
+ ],
+ "returns": "void (nums is modified in place)",
+ "examples": [
+  {
+   "input": "nums = [1, 3, 5, 4, 2]",
+   "output": "[1, 4, 2, 3, 5]",
+   "explanation": "Scanning from the right, 3 (index 1) is the first value smaller than its right neighbor, since 5 > 4 > 2. The suffix [5,4,2] is non-increasing. The smallest value in that suffix greater than 3 is 4, so swap them to get [1,4,5,3,2], then reverse the suffix after index 1 to get [1,4,2,3,5]."
+  },
+  {
+   "input": "nums = [9, 7, 4]",
+   "output": "[4, 7, 9]",
+   "explanation": "The sequence is entirely non-increasing (9 >= 7 >= 4), meaning it is the last possible arrangement. There is no larger arrangement, so the result wraps around to the smallest possible arrangement, which is the fully sorted ascending order."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 100",
+  "0 <= nums[i] <= 100",
+  "The array may contain duplicate values",
+  "The rearrangement must be done in place using O(1) extra space",
+  "Time complexity should be O(n)"
+ ]
+}

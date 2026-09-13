@@ -1,0 +1,36 @@
+{
+ "id": "54",
+ "slug": "longest-consecutive-sequence",
+ "title": "Longest Run of Consecutive Numbers",
+ "tags": [
+  "Array",
+  "Hash Table",
+  "Union-Find"
+ ],
+ "statement": "You are given a collection of integers that may be unsorted and may contain duplicates. A group of numbers is considered a *consecutive run* if, after removing duplicates, they can be arranged so that each value is exactly one more than the previous value (for example, 7, 8, 9, 10).\n\nYour task is to determine the length of the longest such consecutive run that can be formed using values from the given collection.\n\nBecause the input may be large, your solution should avoid sorting the entire array if possible and should instead aim for linear time by using a hash-based lookup (or an equivalent union-find approach) to detect run boundaries efficiently.",
+ "functionName": "longestConsecutiveRun",
+ "params": [
+  {
+   "name": "nums",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "nums = [10, 4, 20, 1, 3, 2]",
+   "output": "4",
+   "explanation": "The numbers 1, 2, 3, 4 form a consecutive run of length 4. No longer run of consecutive values exists among the given numbers."
+  },
+  {
+   "input": "nums = [5, 5, 5, 5]",
+   "output": "1",
+   "explanation": "After removing duplicates only the single value 5 remains, so the longest consecutive run has length 1."
+  }
+ ],
+ "constraints": [
+  "0 <= nums.length <= 200000",
+  "-1000000000 <= nums[i] <= 1000000000",
+  "The array is not necessarily sorted and may contain duplicate values"
+ ]
+}

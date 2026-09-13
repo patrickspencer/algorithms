@@ -1,0 +1,43 @@
+{
+ "id": "68",
+ "slug": "lru-cache",
+ "title": "Least Recently Used Cache",
+ "tags": [
+  "Hash Table",
+  "Linked List",
+  "Design",
+  "Doubly-Linked List"
+ ],
+ "statement": "Design a fixed-capacity key-value cache that evicts the least recently used entry whenever it runs out of room.\n\nYou must support two operations:\n\n- **Fetch(key)**, If `key` exists in the cache, return its associated value and mark this key as the most recently used entry. If `key` is not present, return `-1` and the cache state is unchanged (a miss does not count as a use).\n- **Store(key, value)**, Insert or update the value for `key`, marking it as the most recently used entry. If the key already existed, its value is overwritten. If inserting a brand-new key would push the number of stored entries beyond the cache's fixed capacity, first evict the single least recently used entry (the one that has gone the longest without being fetched or stored) to make room.\n\n'Recently used' is determined purely by the order in which keys are touched via Fetch or Store, the values themselves and how long ago in wall-clock time an operation happened don't matter, only the relative order of operations.\n\nBoth operations must run in O(1) average time, since the cache is meant to be used as a fast-access structure inside a larger system.\n\nTo make this testable as a pure function, you will be given the cache's capacity and a sequence of operations to apply in order. Each operation is either a fetch (given as a single-element description containing the key) or a store (given as a two-element description containing the key and the value to store). Return, in order, the results produced by every fetch operation in the sequence (stores produce no output).",
+ "functionName": "simulateLruCache",
+ "params": [
+  {
+   "name": "capacity",
+   "type": "integer"
+  },
+  {
+   "name": "operations",
+   "type": "array of (\"fetch\", key) or (\"store\", key, value) tuples"
+  }
+ ],
+ "returns": "array of integers (one result per fetch operation, in order)",
+ "examples": [
+  {
+   "input": "capacity = 2, operations = [store(1,10), store(2,20), fetch(1), store(3,30), fetch(2), store(4,40), fetch(1), fetch(3), fetch(4)]",
+   "output": "[10, -1, -1, 30, 40]",
+   "explanation": "Cache holds {1:10,2:20} after the first two stores. fetch(1)=10 and makes key 1 most-recent, so usage order is [2,1]. store(3,30) needs room, evicts key 2 (least recent), cache is now {1:10,3:30}. fetch(2)=-1 since it was evicted. store(4,40) evicts key 1 (now least recent), cache becomes {3:30,4:40}. fetch(1)=-1 (evicted), fetch(3)=30, fetch(4)=40."
+  },
+  {
+   "input": "capacity = 1, operations = [store(5,100), fetch(5), store(6,200), fetch(5), fetch(6)]",
+   "output": "[100, -1, 200]",
+   "explanation": "With capacity 1 only one key can live in the cache at a time. store(5,100) inserts key 5. fetch(5)=100. store(6,200) must evict key 5 to insert key 6. fetch(5)=-1 since it was evicted, fetch(6)=200."
+  }
+ ],
+ "constraints": [
+  "1 <= capacity <= 3000",
+  "1 <= number of operations <= 2 * 10^5",
+  "0 <= key, value <= 10^6",
+  "It is guaranteed that store(key, value) is called with a valid key/value pair as described",
+  "All operations must be processed in the given order, and each fetch/store must run in O(1) average time"
+ ]
+}

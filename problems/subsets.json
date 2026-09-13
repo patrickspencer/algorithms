@@ -1,0 +1,36 @@
+{
+ "id": "6",
+ "slug": "subsets",
+ "title": "All Possible Groupings",
+ "tags": [
+  "Array",
+  "Backtracking",
+  "Bit Manipulation"
+ ],
+ "statement": "You are given a collection of distinct integers. Your task is to produce every possible grouping (subset) that can be formed by choosing any number of the elements, including choosing none of them and choosing all of them.\n\nA grouping is defined purely by which elements it contains, not by any ordering, so within a single grouping the elements may appear in any order you like, but the collection of groupings you return must not contain two groupings that hold exactly the same set of numbers. Since the input values are guaranteed to be distinct, no two groupings will ever be identical unless you accidentally generate a duplicate yourself.\n\nReturn all of these groupings together as a list. The overall order in which you list the groupings, and the order of numbers inside each grouping, does not matter, any arrangement that contains exactly the correct collection of distinct groupings will be accepted.",
+ "functionName": "generateSubsets",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number[][]",
+ "examples": [
+  {
+   "input": "nums = [5, 9, 2]",
+   "output": "[[],[5],[9],[2],[5,9],[5,2],[9,2],[5,9,2]]",
+   "explanation": "There are 3 elements, so there are 2^3 = 8 possible groupings, ranging from the empty grouping to the one containing all three numbers."
+  },
+  {
+   "input": "nums = [7, 1]",
+   "output": "[[],[7],[1],[7,1]]",
+   "explanation": "With only 2 elements there are 2^2 = 4 groupings: the empty one, each single element on its own, and the pair together."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 10",
+  "-10 <= nums[i] <= 10",
+  "All elements of nums are unique"
+ ]
+}

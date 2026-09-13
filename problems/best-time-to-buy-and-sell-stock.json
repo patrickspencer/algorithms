@@ -1,0 +1,34 @@
+{
+ "id": "50",
+ "slug": "best-time-to-buy-and-sell-stock",
+ "title": "Best Time to Buy and Sell Stock",
+ "tags": [
+  "Array",
+  "Dynamic Programming"
+ ],
+ "statement": "You are given a record of a single stock's price at the close of each trading day over some period. You may buy the stock on exactly one day and sell it on a later day, making at most one such transaction in total.\n\nYour goal is to determine the maximum profit you could have earned from this one buy-then-sell transaction. You must buy before you sell (selling on the same day you buy is not allowed), and if no transaction can produce a positive profit, you should report that no profit was possible.\n\nWrite a function that examines the sequence of daily prices and returns the largest profit achievable under these rules.",
+ "functionName": "maxProfit",
+ "params": [
+  {
+   "name": "prices",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "prices = [8, 3, 9, 2, 7, 1]",
+   "output": "6",
+   "explanation": "Buy on the day priced at 3 and sell on the following day priced at 9, giving a profit of 9 - 3 = 6. No other buy/sell pair yields a larger profit."
+  },
+  {
+   "input": "prices = [10, 9, 8, 7, 6]",
+   "output": "0",
+   "explanation": "Prices strictly decrease every day, so any purchase followed by a later sale would result in a loss. The best choice is to make no transaction, earning a profit of 0."
+  }
+ ],
+ "constraints": [
+  "1 <= prices.length <= 100000",
+  "0 <= prices[i] <= 10000"
+ ]
+}

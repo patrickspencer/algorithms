@@ -1,0 +1,45 @@
+{
+ "id": "46",
+ "slug": "course-schedule",
+ "title": "Certification Track Feasibility",
+ "tags": [
+  "Depth-First Search",
+  "Breadth-First Search",
+  "Graph Theory",
+  "Topological Sort",
+  "Directed Acyclic Graph"
+ ],
+ "statement": "A technical training program offers a set of certifications, numbered from `0` to `n - 1`. Some certifications require that one or more other certifications be completed first. You are given the total number of certifications and a list of prerequisite pairs, where a pair `[a, b]` means certification `a` cannot be attempted until certification `b` has been completed.\n\nA learner is free to choose the order in which they attempt certifications, as long as every prerequisite relationship is respected, and each certification only needs to be completed once. Because certifications can depend on each other, it is possible that the requirements form a cycle (for example, certification A requires B, B requires C, and C requires A), in which case it becomes impossible for anyone to complete every certification.\n\nWrite a function that determines whether it is possible to complete all `n` certifications given the prerequisite list. Return `true` if there exists at least one valid order in which every certification can be completed while honoring all prerequisites, or `false` if no such order exists.",
+ "functionName": "canCompleteAllCertifications",
+ "params": [
+  {
+   "name": "numCertifications",
+   "type": "int"
+  },
+  {
+   "name": "prerequisites",
+   "type": "int[][]"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "numCertifications = 4, prerequisites = [[1,0],[2,1],[3,2]]",
+   "output": "true",
+   "explanation": "The prerequisites form a simple chain: complete 0, then 1, then 2, then 3. There is no cycle, so a valid completion order exists (0, 1, 2, 3)."
+  },
+  {
+   "input": "numCertifications = 3, prerequisites = [[0,1],[1,2],[2,0]]",
+   "output": "false",
+   "explanation": "Certification 0 needs 1, 1 needs 2, and 2 needs 0. This forms a cycle, so no certification in this cycle can ever be attempted first, making it impossible to complete all of them."
+  }
+ ],
+ "constraints": [
+  "1 <= numCertifications <= 10^5",
+  "0 <= prerequisites.length <= 5 * 10^5",
+  "prerequisites[i].length == 2",
+  "0 <= prerequisites[i][0], prerequisites[i][1] < numCertifications",
+  "prerequisites[i][0] != prerequisites[i][1]",
+  "All prerequisite pairs are unique"
+ ]
+}

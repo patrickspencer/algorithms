@@ -1,0 +1,41 @@
+{
+ "id": "59",
+ "slug": "add-two-numbers",
+ "title": "Add Two Numbers",
+ "tags": [
+  "Linked List",
+  "Math",
+  "Recursion"
+ ],
+ "statement": "You are given two non-empty singly linked lists, each representing a non-negative integer. The digits are stored in reverse order (the head node holds the ones digit, the next node holds the tens digit, and so on), and each node contains exactly one digit from 0 to 9.\n\nWrite a function that adds the two numbers represented by these lists and returns the sum as a new linked list, also built with digits in reverse order (least-significant digit first).\n\nYou may assume neither input list contains leading zeros, except that the number 0 itself may be represented by a single node holding the value 0. Your solution should compute the sum digit-by-digit the way you would add numbers by hand, propagating any carry to the next position, and should work correctly even when the two lists have different lengths or when a final carry produces an extra digit in the result.",
+ "functionName": "addTwoNumbers",
+ "params": [
+  {
+   "name": "l1",
+   "type": "ListNode"
+  },
+  {
+   "name": "l2",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "l1 = [7,2,4] (represents 427), l2 = [5,6] (represents 65)",
+   "output": "[2,9,4] (represents 492)",
+   "explanation": "427 + 65 = 492. Adding ones digits: 7+5=12, write 2, carry 1. Tens digits: 2+6+1(carry)=9, write 9, no carry. Hundreds digit: 4+0=4, write 4. Result reversed-order list is [2,9,4]."
+  },
+  {
+   "input": "l1 = [9,9], l2 = [1]",
+   "output": "[0,0,1]",
+   "explanation": "99 + 1 = 100. Ones digits: 9+1=10, write 0, carry 1. Tens digits: 9+0+1(carry)=10, write 0, carry 1. No digits remain in either list, but a carry of 1 remains, so a new node with value 1 is appended, giving [0,0,1] which represents 100."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in each linked list is between 1 and 100.",
+  "Each node's value is an integer from 0 to 9.",
+  "Neither list contains leading zeros, except a single-node list representing the value 0.",
+  "The resulting sum will fit within a value representable by at most 101 digits."
+ ]
+}

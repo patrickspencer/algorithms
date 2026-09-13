@@ -1,0 +1,40 @@
+{
+ "id": "64",
+ "slug": "reverse-nodes-in-k-group",
+ "title": "Reverse Nodes in k-Group",
+ "tags": [
+  "Linked List",
+  "Recursion"
+ ],
+ "statement": "You are given the head of a singly linked list along with a positive integer k. Your task is to reverse the order of nodes within every consecutive block of k nodes in the list, and return the head of the resulting list.\n\nProcess the list from the beginning, splitting it conceptually into chunks of exactly k nodes each. For every full chunk (one that contains exactly k nodes), reverse the internal order of its nodes. If, at the end of the list, there remain fewer than k nodes left over, leave that final partial chunk exactly as it appears in the original list, do not reverse it and do not pad it.\n\nYou may not simply swap the values stored in the nodes; the actual node objects must be relinked so that their pointers reflect the new order. Aim to solve this using only a constant amount of extra space beyond the list itself (an iterative pointer-rewiring approach, or a recursive approach if you are comfortable reasoning about its space usage, are both acceptable).",
+ "functionName": "reverseKGroup",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  },
+  {
+   "name": "k",
+   "type": "integer"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "head = [3,1,4,1,5,9,2,6], k = 3",
+   "output": "[4,1,3,2,9,5,6]",
+   "explanation": "The first 3 nodes (3,1,4) form a full chunk and are reversed to (4,1,3). The next 3 nodes (1,5,9) form a full chunk and are reversed to (9,5,1). The remaining nodes (2,6) are fewer than k=3, so they stay in place, giving the final list 4,1,3,9,5,1,2,6."
+  },
+  {
+   "input": "head = [7,7,7,7,7], k = 1",
+   "output": "[7,7,7,7,7]",
+   "explanation": "With k=1, every chunk contains a single node, and reversing a one-node chunk changes nothing, so the list is returned unchanged."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is in the range [0, 5000].",
+  "0 <= Node.val <= 1000",
+  "1 <= k <= number of nodes in the list (when the list is non-empty)",
+  "Follow-up: solve it using O(1) extra memory, without allocating new nodes."
+ ]
+}

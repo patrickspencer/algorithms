@@ -1,0 +1,37 @@
+{
+ "id": "94",
+ "slug": "merge-intervals",
+ "title": "Combine Overlapping Meeting Blocks",
+ "tags": [
+  "Array",
+  "Sorting",
+  "Quicksort"
+ ],
+ "statement": "You are given a list of time blocks, where each block is represented as a pair `[start, end]` denoting the start and end time of that block on a shared timeline. Two blocks are considered overlapping if they share at least one point in time (including the case where one block's end time equals another block's start time). Your task is to consolidate the given blocks so that no two blocks in the result overlap or touch, any blocks that overlap or are adjacent should be fused into a single block spanning from the earliest start to the latest end among the group. Return the resulting list of blocks, and you may return them in any order.",
+ "functionName": "consolidateBlocks",
+ "params": [
+  {
+   "name": "blocks",
+   "type": "number[][]"
+  }
+ ],
+ "returns": "number[][]",
+ "examples": [
+  {
+   "input": "blocks = [[5,10],[15,18],[9,12],[20,25]]",
+   "output": "[[5,12],[15,18],[20,25]]",
+   "explanation": "The block [5,10] and [9,12] share the point 9-10, so they merge into [5,12]. [15,18] and [20,25] don't touch any other block, so they stay as they are."
+  },
+  {
+   "input": "blocks = [[1,4],[4,7],[8,9]]",
+   "output": "[[1,7],[8,9]]",
+   "explanation": "[1,4] ends exactly where [4,7] begins, so since they touch at time 4 they are merged into [1,7]. [8,9] does not touch either of the other blocks (there's a gap between 7 and 8), so it remains separate."
+  }
+ ],
+ "constraints": [
+  "1 <= blocks.length <= 10^4",
+  "blocks[i].length == 2",
+  "0 <= start_i <= end_i <= 10^9",
+  "The input list may be given in any order (not necessarily sorted)."
+ ]
+}

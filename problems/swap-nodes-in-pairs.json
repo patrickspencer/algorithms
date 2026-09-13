@@ -1,0 +1,35 @@
+{
+ "id": "63",
+ "slug": "swap-nodes-in-pairs",
+ "title": "Swap Nodes in Pairs",
+ "tags": [
+  "Linked List",
+  "Recursion"
+ ],
+ "statement": "You are given the head of a singly linked list where each node stores a single integer value. Rearrange the list by exchanging the positions of every two neighboring nodes, taken two at a time from the front of the list, and return the head of the resulting list.\n\nConcretely, walk the list from the beginning and group its nodes into consecutive pairs. For each pair, flip the order of the two nodes so the second one now comes before the first. If the list has an odd number of nodes, the final unpaired node stays exactly where it is (at the end of the list). You must produce the answer by rewiring the existing node objects, do not create new nodes and do not simply change the integer values stored inside the nodes.\n\nYour solution should work for lists of essentially any length, including the empty list and a list with only one node, in which case no swapping is possible and the list is returned unchanged.",
+ "functionName": "swapPairs",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "head = [3,9,1,7,5,2]",
+   "output": "[9,3,7,1,2,5]",
+   "explanation": "The nodes are grouped into pairs (3,9), (1,7), (5,2). Swapping each pair gives (9,3), (7,1), (2,5), which concatenated form 9 -> 3 -> 7 -> 1 -> 2 -> 5."
+  },
+  {
+   "input": "head = [4,8,6]",
+   "output": "[8,4,6]",
+   "explanation": "The first pair (4,8) is swapped to become (8,4). The value 6 has no partner since the list length is odd, so it remains fixed at the end, giving 8 -> 4 -> 6."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is in the range [0, 10^4].",
+  "-10^5 <= Node.val <= 10^5",
+  "The list may be empty, in which case the function should return null/None."
+ ]
+}

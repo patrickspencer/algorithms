@@ -1,0 +1,35 @@
+{
+ "id": "86",
+ "slug": "container-with-most-water",
+ "title": "Tallest Fence Posts, Most Water Between Them",
+ "tags": [
+  "Array",
+  "Two Pointers",
+  "Greedy"
+ ],
+ "statement": "You are given a row of vertical fence posts standing along a straight fence line. Each post has a certain height, and posts are spaced one unit apart from their immediate neighbors.\n\nImagine you pick any two posts and stretch a flat board between their tops, using the two posts as the left and right walls of a rectangular basin. The basin can hold water up to the height of the *shorter* of the two chosen posts (water would spill over the shorter wall if you tried to fill it higher), and the width of the basin is the distance between the two posts.\n\nYour task is to choose two posts (not necessarily adjacent) so that the resulting basin holds the greatest possible amount of water, and return that maximum amount. The amount of water is simply width times the height of the shorter post, you do not need to account for the volume taken up by the posts themselves.\n\nDesign a solution that avoids checking every possible pair of posts one by one, since that would be too slow for large inputs.",
+ "functionName": "maxWaterContainer",
+ "params": [
+  {
+   "name": "heights",
+   "type": "int[]"
+  }
+ ],
+ "returns": "int",
+ "examples": [
+  {
+   "input": "heights = [4, 1, 6, 2, 9, 3, 5]",
+   "output": "20",
+   "explanation": "Choosing the post of height 6 at index 2 and the post of height 5 at index 6 gives width 6 - 2 = 4 and a limiting height of min(6, 5) = 5, so the water held is 4 * 5 = 20. No other pair of posts produces a larger basin."
+  },
+  {
+   "input": "heights = [2, 2, 2, 2]",
+   "output": "6",
+   "explanation": "All posts are equally tall, so the best choice is the two outermost posts (index 0 and index 3), giving width 3 and height 2, for a total of 3 * 2 = 6."
+  }
+ ],
+ "constraints": [
+  "2 <= heights.length <= 10^5",
+  "0 <= heights[i] <= 10^4"
+ ]
+}

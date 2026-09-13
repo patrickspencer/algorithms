@@ -1,0 +1,39 @@
+{
+ "id": "44",
+ "slug": "longest-common-subsequence",
+ "title": "Shared Reading Order",
+ "tags": [
+  "String",
+  "Dynamic Programming",
+  "Longest Common Subsequence"
+ ],
+ "statement": "Two archivists each transcribed a list of ancient scroll fragment codes as they read through their respective collections, in the order they encountered them. A code is written as a string of lowercase English letters.\n\nWe want to find the longest sequence of codes that appears in both archivists' transcriptions while preserving the relative reading order within each list, though the two archivists were free to skip fragments they didn't personally examine, so the matching codes need not be adjacent in either original list.\n\nGiven the two transcriptions as strings, determine the length of the longest such shared ordering. If no code is common to both lists in a compatible order, the answer is zero.",
+ "functionName": "longestCommonSubsequence",
+ "params": [
+  {
+   "name": "text1",
+   "type": "string"
+  },
+  {
+   "name": "text2",
+   "type": "string"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "text1 = \"abcbda\", text2 = \"bdcaba\"",
+   "output": "4",
+   "explanation": "One longest shared ordering is \"bcba\": it appears in text1 as positions b(2)-c(3)-b(4)-a(6) and in text2 as positions b(1)-c(3)-b(5)-a(6), both in increasing index order. No length-5 common subsequence exists for these two strings."
+  },
+  {
+   "input": "text1 = \"xyz\", text2 = \"mno\"",
+   "output": "0",
+   "explanation": "The two strings share no letters at all, so the only common subsequence is the empty one, giving length 0."
+  }
+ ],
+ "constraints": [
+  "1 <= text1.length, text2.length <= 1000",
+  "text1 and text2 consist only of lowercase English letters"
+ ]
+}

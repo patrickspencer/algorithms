@@ -1,0 +1,42 @@
+{
+ "id": "56",
+ "slug": "kth-largest-element-in-an-array",
+ "title": "Kth Largest Element in an Array",
+ "tags": [
+  "Array",
+  "Divide and Conquer",
+  "Sorting",
+  "Heap (Priority Queue)",
+  "Quickselect"
+ ],
+ "statement": "You are given an unordered list of integers and a positive integer k. Your task is to determine the value that would occupy the k-th position if the list were sorted from largest to smallest, without necessarily requiring you to fully sort the entire list.\n\nTo be precise: rank all the numbers from the largest value down to the smallest, allowing duplicate values to occupy separate consecutive ranks (i.e., duplicates are not merged into a single rank, if the same number appears multiple times, each occurrence counts as its own position in the ranking). Return the number sitting at rank k in this descending ranking.\n\nWhile sorting the array and reading off the k-th entry trivially solves the problem, aim for an approach that avoids the full O(n log n) sorting cost when possible, for example, using a heap-based selection strategy or a partition-based (quickselect-style) selection strategy.",
+ "functionName": "findKthLargest",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  },
+  {
+   "name": "k",
+   "type": "number"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "nums = [7, 2, 9, 4, 2, 6], k = 3",
+   "output": "6",
+   "explanation": "Sorted in descending order the list reads [9, 7, 6, 4, 2, 2]. The 3rd entry in that ordering is 6."
+  },
+  {
+   "input": "nums = [5, 5, 5, 1], k = 2",
+   "output": "5",
+   "explanation": "Sorted in descending order the list reads [5, 5, 5, 1]. Since duplicates each occupy their own rank, the 2nd entry is still 5 (the second copy of 5), not the next distinct value."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 10^5",
+  "-10^4 <= nums[i] <= 10^4",
+  "1 <= k <= nums.length"
+ ]
+}

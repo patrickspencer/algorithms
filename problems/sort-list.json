@@ -1,0 +1,38 @@
+{
+ "id": "69",
+ "slug": "sort-list",
+ "title": "Sort a Singly Linked List",
+ "tags": [
+  "Linked List",
+  "Two Pointers",
+  "Divide and Conquer",
+  "Sorting",
+  "Merge Sort"
+ ],
+ "statement": "You are given the head node of a singly linked list where each node stores an integer value. Rearrange the nodes so that the list is sorted in non-decreasing order of their values, and return the head of the resulting list.\n\nYou must not simply dump the values into an array, sort the array, and overwrite the node values, the intent of this exercise is to manipulate the list structure itself. Aim for an algorithm that runs in O(n log n) time. As a bonus challenge, try to do it using only O(1) extra space (i.e., without recursion or auxiliary arrays), for example by repeatedly splitting the list in half using a slow/fast pointer and merging the two sorted halves back together (a bottom-up or top-down merge sort adapted to linked lists).\n\nThe list may be empty, may contain a single node, and may contain duplicate values (including negative numbers). The relative order of equal-valued nodes does not need to be preserved.",
+ "functionName": "sortList",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "ListNode",
+ "examples": [
+  {
+   "input": "head = [7, 2, 9, 2, -3]",
+   "output": "[-3, 2, 2, 7, 9]",
+   "explanation": "The five nodes are reordered into non-decreasing order; the two nodes holding value 2 both appear, in either relative order."
+  },
+  {
+   "input": "head = [4]",
+   "output": "[4]",
+   "explanation": "A list with a single node is already sorted, so it is returned unchanged."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is in the range [0, 5 * 10^4].",
+  "-10^5 <= Node.val <= 10^5",
+  "Aim for O(n log n) time complexity."
+ ]
+}

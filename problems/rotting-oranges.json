@@ -1,0 +1,36 @@
+{
+ "id": "47",
+ "slug": "rotting-oranges",
+ "title": "Rotting Oranges",
+ "tags": [
+  "Array",
+  "Breadth-First Search",
+  "Matrix"
+ ],
+ "statement": "You manage a rectangular storage grid inside a fruit warehouse. Each cell of the grid holds one of three possible things: an empty slot, a crate containing a single fresh mango, or a crate containing a mango that has already started to rot.\n\nEvery minute, any rotten mango infects all of the fresh mangoes that sit in slots directly north, south, east, or west of it (diagonal neighbors are not affected). An infected mango becomes rotten starting the following minute, and it can then go on to infect its own fresh neighbors on subsequent minutes. Empty slots never change and never spread anything.\n\nGiven the initial layout of the grid, determine the minimum number of whole minutes that must pass before every fresh mango in the warehouse has rotted. If some fresh mango can never be reached by the spreading rot no matter how long you wait (because it is cut off by empty slots or by the edges of the grid), report that this is impossible.\n\nThe grid is provided as a 2D array of integers, where each cell contains 0 to represent an empty slot, 1 to represent a fresh mango, or 2 to represent a mango that starts out already rotten.",
+ "functionName": "minutesToRot",
+ "params": [
+  {
+   "name": "grid",
+   "type": "number[][]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "grid = [[1,2,0],[1,1,1],[0,1,1]]",
+   "output": "3",
+   "explanation": "The single rotten mango starts at position (0,1). Minute 1: it infects (0,0) and (1,1). Minute 2: (0,0) infects (1,0), and (1,1) infects (1,2) and (2,1). Minute 3: (1,2) infects (2,2). At this point every fresh mango has rotted, and no earlier minute count would have covered them all, so the answer is 3."
+  },
+  {
+   "input": "grid = [[2,0,1],[0,0,0],[1,0,2]]",
+   "output": "-1",
+   "explanation": "The fresh mangoes at (0,2) and (2,0) are each surrounded only by empty slots, so the rot from the two starting rotten mangoes can never reach them. Since some fresh mango will remain fresh forever, the function returns -1."
+  }
+ ],
+ "constraints": [
+  "1 <= grid.length, grid[0].length <= 10",
+  "Every value in grid is either 0, 1, or 2",
+  "All rows of grid have the same length"
+ ]
+}

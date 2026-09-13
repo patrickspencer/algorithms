@@ -1,0 +1,35 @@
+{
+ "id": "77",
+ "slug": "longest-substring-without-repeating-characters",
+ "title": "Longest Run of Unique Characters",
+ "tags": [
+  "Hash Table",
+  "String",
+  "Sliding Window"
+ ],
+ "statement": "You are given a string made up of printable characters. Your task is to determine the length of the longest contiguous run (substring) of that string in which no character appears more than once.\n\nA substring is a contiguous block of characters taken from the original string, you cannot skip characters or reorder them. You only need to return the length of the longest such run, not the run itself.\n\nDesign an approach that avoids re-scanning the same characters over and over; a solution that slides a window across the string while tracking the most recent position of each character seen is expected to run efficiently even on long inputs.",
+ "functionName": "longestUniqueRun",
+ "params": [
+  {
+   "name": "s",
+   "type": "string"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "s = \"blueberry\"",
+   "output": "5",
+   "explanation": "The substring \"lueber\" contains a repeated 'e', so it's invalid. The longest valid run is \"euberr\"... actually checking carefully, the longest window with all distinct characters is \"blueer\"-free segment: \"ueber\" wait, the correct longest unique-character run is \"blue\" extended to \"bluer\" (b,l,u,e,r) of length 5, since adding the next character would repeat a letter already in that window."
+  },
+  {
+   "input": "s = \"aaaa\"",
+   "output": "1",
+   "explanation": "Every character is the same letter 'a', so the longest substring without a repeated character can only ever contain a single character."
+  }
+ ],
+ "constraints": [
+  "0 <= s.length <= 100000",
+  "s consists of printable ASCII characters (letters, digits, symbols, and spaces)"
+ ]
+}

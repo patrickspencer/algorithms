@@ -1,0 +1,36 @@
+{
+ "id": "15",
+ "slug": "find-minimum-in-rotated-sorted-array",
+ "title": "Smallest Value in a Rotated Ascending Array",
+ "tags": [
+  "Array",
+  "Binary Search"
+ ],
+ "statement": "You are given an array of distinct integers that was originally sorted in strictly increasing order, but has since been rotated to the right by some unknown number of positions (possibly zero). In other words, if you take the sorted array and cut it at some pivot index, then swap the two resulting pieces, you get the array you are handed.\n\nYour task is to determine the smallest element contained in this rotated array.\n\nBecause the array retains large sorted runs even after rotation, you should be able to locate the minimum without inspecting every element, an approach based on comparing midpoints and narrowing a search window is expected to run in logarithmic time relative to the array's length.",
+ "functionName": "findRotationMinimum",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  }
+ ],
+ "returns": "number",
+ "examples": [
+  {
+   "input": "nums = [9, 12, 15, 2, 5, 7]",
+   "output": "2",
+   "explanation": "The original ascending order was [2, 5, 7, 9, 12, 15], and it was rotated right by 3 positions. The smallest value, 2, sits at index 3."
+  },
+  {
+   "input": "nums = [4, 6, 8, 10]",
+   "output": "4",
+   "explanation": "No rotation occurred (or it was rotated by a full cycle back to itself), so the array is already sorted and its first element, 4, is the minimum."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 5000",
+  "-10^7 <= nums[i] <= 10^7",
+  "All values in nums are unique",
+  "nums is guaranteed to be a rotation of some strictly increasing sequence"
+ ]
+}

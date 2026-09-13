@@ -1,0 +1,38 @@
+{
+ "id": "25",
+ "slug": "invert-binary-tree",
+ "title": "Invert Binary Tree",
+ "tags": [
+  "Tree",
+  "Depth-First Search",
+  "Breadth-First Search",
+  "Binary Tree"
+ ],
+ "statement": "You are given the root of a binary tree. Your task is to produce the mirror image of this tree: for every node in the tree, its left and right children (and everything below them) must be swapped with each other, all the way down to the leaves.\n\nMore formally, define an operation on a node that exchanges its left-subtree pointer with its right-subtree pointer. Applying this operation to *every* node in the tree (not just the root) transforms the tree into its horizontal mirror reflection. You must return the root of this transformed tree. The transformation may be done in place (mutating the given tree) or by building a new tree, either approach is acceptable as long as the resulting structure and values are correct.\n\nA `null`/empty tree should simply be returned as-is, and a tree with a single node is unaffected since it has no children to swap.",
+ "functionName": "invertTree",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "TreeNode",
+ "examples": [
+  {
+   "input": "root = [5,2,9,1,4,8,12]  (5's children: 2,9 | 2's children: 1,4 | 9's children: 8,12)",
+   "output": "[5,9,2,12,8,4,1]  (5's children become 9,2 | 9's children become 12,8 | 2's children become 4,1)",
+   "explanation": "At every node the left and right pointers are swapped. The whole right subtree rooted at 9 now appears on the left, the whole left subtree rooted at 2 now appears on the right, and within each of those subtrees the same swap has also been applied to their children."
+  },
+  {
+   "input": "root = [3,null,8,6]  (3 has no left child, right child 8 | 8's children: 6,null)",
+   "output": "[3,8,null,null,6]  (3's children become 8,null | 8's children become null,6)",
+   "explanation": "Node 3 originally only had a right child (8), so after swapping it only has a left child (the inverted subtree rooted at 8). Inside that subtree, node 8 originally had left child 6 and no right child; after inverting, 8 has no left child and right child 6."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is in the range [0, 5000].",
+  "-1000 <= Node.val <= 1000",
+  "All node values are integers; duplicate values may appear in the tree.",
+  "The tree is a standard binary tree (each node has at most a left and a right child pointer)."
+ ]
+}

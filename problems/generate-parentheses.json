@@ -1,0 +1,37 @@
+{
+ "id": "2",
+ "slug": "generate-parentheses",
+ "title": "All Valid Bracket Combinations",
+ "tags": [
+  "String",
+  "Dynamic Programming",
+  "Backtracking",
+  "Bracket Sequences"
+ ],
+ "statement": "You are given a positive integer representing a number of matched pairs of round brackets. Your task is to produce every distinct string of length twice that number, built only from the characters '(' and ')', such that the string forms a well-formed bracket sequence.\n\nA sequence is considered well-formed if, scanning from left to right, the running count of '(' characters seen so far never drops below the running count of ')' characters seen so far, and by the end of the string the two counts are exactly equal.\n\nReturn all such well-formed sequences, with no duplicates, in any order.",
+ "functionName": "generateBracketCombinations",
+ "params": [
+  {
+   "name": "pairCount",
+   "type": "int"
+  }
+ ],
+ "returns": "List<String>",
+ "examples": [
+  {
+   "input": "pairCount = 2",
+   "output": "[\"(())\", \"()()\"]",
+   "explanation": "With 2 pairs there are exactly two ways to arrange the brackets so that they stay balanced at every prefix: nesting one pair inside the other, or placing two separate pairs side by side. Sequences like \")((\" or \"(()\" are excluded because a prefix would have more closing than opening brackets, or the final counts wouldn't match."
+  },
+  {
+   "input": "pairCount = 1",
+   "output": "[\"()\"]",
+   "explanation": "A single pair only has one valid arrangement: the opening bracket must come before its matching closing bracket, giving \"()\". The alternative ordering \")(\" is invalid since the very first character would already violate the balance rule."
+  }
+ ],
+ "constraints": [
+  "1 <= pairCount <= 8",
+  "The returned list must contain each valid sequence exactly once",
+  "Every returned string must have length equal to 2 * pairCount"
+ ]
+}

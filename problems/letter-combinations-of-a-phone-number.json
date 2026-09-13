@@ -1,0 +1,35 @@
+{
+ "id": "1",
+ "slug": "letter-combinations-of-a-phone-number",
+ "title": "Letter Combinations of a Phone Number",
+ "tags": [
+  "Hash Table",
+  "String",
+  "Backtracking"
+ ],
+ "statement": "Old-style phone keypads map each of the digits 2 through 9 to a small group of letters (much like the labels still printed on some telephone buttons). Given a string made up only of digits from this range, determine every possible string of letters that could be formed by picking one letter from the group associated with each digit, in the order the digits appear.\n\nThe digit-to-letters mapping is fixed and follows the traditional telephone layout:\n\n- 2 -> \"abc\"\n- 3 -> \"def\"\n- 4 -> \"ghi\"\n- 5 -> \"jkl\"\n- 6 -> \"mno\"\n- 7 -> \"pqrs\"\n- 8 -> \"tuv\"\n- 9 -> \"wxyz\"\n\nFor an input string of length n, each character choice branches independently, so the total number of resulting letter combinations equals the product of the sizes of the letter groups for each digit in the input. You must return all of these combinations; the order in which you return them does not matter, but every combination must appear exactly once and no invalid combination should appear.\n\nIf the input string is empty, there are no digits to expand, and the answer should be an empty collection of combinations (not a collection containing an empty string).",
+ "functionName": "letterCombinations",
+ "params": [
+  {
+   "name": "digits",
+   "type": "string"
+  }
+ ],
+ "returns": "string[]",
+ "examples": [
+  {
+   "input": "digits = \"46\"",
+   "output": "[\"gm\",\"gn\",\"go\",\"hm\",\"hn\",\"ho\",\"im\",\"in\",\"io\"]",
+   "explanation": "Digit '4' maps to \"ghi\" and digit '6' maps to \"mno\". Pairing every letter from the first group with every letter from the second group yields 3 x 3 = 9 combinations, such as 'g'+'m' = \"gm\" and 'i'+'o' = \"io\"."
+  },
+  {
+   "input": "digits = \"79\"",
+   "output": "[\"pw\",\"px\",\"py\",\"pz\",\"qw\",\"qx\",\"qy\",\"qz\",\"rw\",\"rx\",\"ry\",\"rz\",\"sw\",\"sx\",\"sy\",\"sz\"]",
+   "explanation": "Digit '7' maps to \"pqrs\" (4 letters) and digit '9' maps to \"wxyz\" (4 letters), giving 4 x 4 = 16 total combinations formed by taking one letter from each group in order."
+  }
+ ],
+ "constraints": [
+  "0 <= digits.length <= 4",
+  "digits[i] is a digit in the range '2' to '9', inclusive"
+ ]
+}

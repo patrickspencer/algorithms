@@ -1,0 +1,37 @@
+{
+ "id": "17",
+ "slug": "validate-binary-search-tree",
+ "title": "Validate Binary Search Tree",
+ "tags": [
+  "Tree",
+  "Depth-First Search",
+  "Binary Search Tree",
+  "Binary Tree"
+ ],
+ "statement": "You are given the root node of a binary tree in which every node holds an integer value. Determine whether this tree satisfies the ordering rules of a binary search tree (BST).\n\nA tree qualifies as a valid BST when, for every single node in it, the entire subtree hanging off its left child contains only values strictly less than the node's own value, and the entire subtree hanging off its right child contains only values strictly greater than the node's own value. Crucially, this rule must hold with respect to *every* ancestor a node has, not merely its immediate parent, a node deep in the left subtree of some ancestor must still be smaller than that ancestor, even if it happens to be the right child of its own parent. Additionally, both the left and right subtrees of every node must themselves also be valid binary search trees.\n\nWrite a function that inspects the tree and reports true if it is a properly ordered binary search tree, or false otherwise. An empty tree (no root) should be treated as valid.",
+ "functionName": "isValidBST",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "root = [8,3,10,1,6,null,14]",
+   "output": "true",
+   "explanation": "Reading the tree: 8 is the root with left child 3 and right child 10; 3 has children 1 and 6; 10 has right child 14. Every node's left descendants are smaller and right descendants are larger than the node itself across all levels, so the tree is a valid BST."
+  },
+  {
+   "input": "root = [5,3,9,null,null,4,12]",
+   "output": "false",
+   "explanation": "Node 9 is the right child of 5 (correctly greater), but 9's left child is 4, which is less than the root value 5. Since 4 sits in the right subtree of 5 yet is not greater than 5, the BST property is violated even though 4 < 9 locally."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is in the range [0, 10^4].",
+  "-2^31 <= Node.val <= 2^31 - 1",
+  "All node values in the tree are distinct."
+ ]
+}

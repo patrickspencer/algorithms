@@ -1,0 +1,39 @@
+{
+ "id": "14",
+ "slug": "binary-tree-maximum-path-sum",
+ "title": "Best Route Value in a Binary Tree",
+ "tags": [
+  "Dynamic Programming",
+  "Tree",
+  "Depth-First Search",
+  "Binary Tree",
+  "DP on Trees"
+ ],
+ "statement": "You are given the root of a binary tree in which every node holds an integer value (values may be negative, zero, or positive).\n\nDefine a **route** in the tree to be any sequence of nodes where each consecutive pair is connected by a tree edge, and no node appears more than once in the sequence. A route does not need to start or end at the root, and it does not need to pass through the root at all. A route may also consist of a single node. Importantly, a route is allowed to bend at most once, meaning at one node along the route, the path may enter from one child and leave through the other child (in addition to going straight down a single chain of parent-to-child edges).\n\nThe **value** of a route is the sum of the values of all nodes contained in it.\n\nYour task is to examine every possible route in the tree and determine the maximum possible route value.\n\nWrite a function that takes the root of such a binary tree and returns this maximum value.",
+ "functionName": "maxRouteValue",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "integer",
+ "examples": [
+  {
+   "input": "root = [2,1,4]",
+   "output": "7",
+   "explanation": "The tree has root 2 with left child 1 and right child 4. The route 1 -> 2 -> 4 bends at the root and has value 1 + 2 + 4 = 7, which is the best possible route."
+  },
+  {
+   "input": "root = [-2,7,-3,-1,4,null,null]",
+   "output": "10",
+   "explanation": "The tree has root -2, left child 7 (which has children -1 and 4), and right child -3. Even though the root's value is negative, the best route avoids it entirely: 4 -> 7 -> -1 gives 4 + 7 + (-1) = 10, and no other route (including ones through the root or the -3 node) beats this total."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is between 1 and 30000.",
+  "Each node's value is an integer between -3000 and 3000, inclusive.",
+  "The tree is a standard binary tree provided via its root node (nodes may have zero, one, or two children).",
+  "The solution should run in O(n) time where n is the number of nodes."
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "id": "16",
+ "slug": "binary-tree-inorder-traversal",
+ "title": "Binary Tree Inorder Traversal",
+ "tags": [
+  "Stack",
+  "Tree",
+  "Depth-First Search",
+  "Binary Tree"
+ ],
+ "statement": "You are given the root node of a binary tree in which every node stores a single integer value. Your task is to visit every node in the tree using an **inorder traversal** and return the values you encounter, in the exact order visited, as a list.\n\nAn inorder traversal is defined recursively for any node `n` as follows:\n1. Traverse the entire left subtree of `n` (inorder).\n2. Visit `n` itself (record its value).\n3. Traverse the entire right subtree of `n` (inorder).\n\nIf the tree is empty (the root is null/None), the result should simply be an empty list.\n\nYou may solve this with recursion, or with an explicit stack to simulate the recursive descent without using the call stack directly, both approaches are acceptable, but you should be able to reason about the stack-based iterative version as well.",
+ "functionName": "inorderTraversal",
+ "params": [
+  {
+   "name": "root",
+   "type": "TreeNode"
+  }
+ ],
+ "returns": "integer[]",
+ "examples": [
+  {
+   "input": "root = [4,2,6,1,3,5,7]",
+   "output": "[1,2,3,4,5,6,7]",
+   "explanation": "The tree is a balanced BST with 4 at the top, 2 and 6 as its children, and 1,3,5,7 as the leaves. Visiting left subtree, then node, then right subtree at every level produces the values in ascending sorted order."
+  },
+  {
+   "input": "root = [9,null,15,null,20]",
+   "output": "[9,15,20]",
+   "explanation": "Node 9 has no left child, so we visit 9 first, then descend into its right child 15, which itself has no left child, so we visit 15, then finally visit its right child 20."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the tree is in the range [0, 5000].",
+  "-10^5 <= Node.val <= 10^5",
+  "The tree is a valid binary tree (each node has at most one parent, no cycles)."
+ ]
+}

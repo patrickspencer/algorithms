@@ -1,0 +1,38 @@
+{
+ "id": "84",
+ "slug": "decode-string",
+ "title": "Unpack the Compressed Message",
+ "tags": [
+  "String",
+  "Stack",
+  "Recursion"
+ ],
+ "statement": "You are given a compressed message encoded as a string. The compression scheme works by replacing any repeated run of characters (or groups of characters) with a notation of the form `k[substring]`, meaning that `substring` should appear exactly `k` times in a row in the decompressed output. Here `k` is always a positive integer written in decimal, and `substring` is itself a valid encoded fragment that may contain plain letters and/or additional nested `k[...]` groups.\n\nYour task is to write a function that reverses this compression and reconstructs the original, fully expanded message.\n\nAssume the input string is always well-formed: every `k[` has a matching closing `]`, encodings may be nested to any depth, numbers used as repeat counts contain only digits 0-9 (no leading `+`/`-` signs), and the only characters that appear are lowercase English letters, digits (used solely as repeat counts), and the brackets `[` and `]`. The decompressed message is guaranteed to be short enough to fit comfortably in memory.",
+ "functionName": "decodeString",
+ "params": [
+  {
+   "name": "s",
+   "type": "string"
+  }
+ ],
+ "returns": "string",
+ "examples": [
+  {
+   "input": "s = \"3[ab]2[c]\"",
+   "output": "\"ababcc\"",
+   "explanation": "The group 3[ab] expands to \"abababab\"... wait, it expands to \"ab\" repeated 3 times = \"ababab\", and 2[c] expands to \"cc\". Concatenating gives \"abababcc\"."
+  },
+  {
+   "input": "s = \"2[a3[b]c]\", output=\"abbbcabbbc\"",
+   "output": "\"abbbcabbbc\"",
+   "explanation": "The inner group 3[b] expands to \"bbb\", making the content of the outer group \"abbbc\". This whole fragment is then repeated 2 times to produce \"abbbcabbbc\"."
+  }
+ ],
+ "constraints": [
+  "1 <= s.length <= 30",
+  "s consists of lowercase English letters, digits '0'-'9', and the characters '[' and ']'",
+  "s is guaranteed to be a valid encoding as described above",
+  "The repeat count k for every group satisfies 1 <= k <= 300",
+  "The length of the fully decoded output string is at most 5 * 10^5"
+ ]
+}

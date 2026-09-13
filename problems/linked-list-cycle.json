@@ -1,0 +1,39 @@
+{
+ "id": "66",
+ "slug": "linked-list-cycle",
+ "title": "Loop in a Linked List",
+ "tags": [
+  "Hash Table",
+  "Linked List",
+  "Two Pointers",
+  "Floyd's Cycle Finding Algorithm"
+ ],
+ "statement": "You are given the head node of a singly linked list. Each node stores a value and a pointer to the next node (the last node's pointer is null unless the list loops back on itself).\n\nSometimes, due to a bug or intentional construction, the `next` pointer of some node in the list points back to an earlier node instead of continuing forward or ending at null. This creates a cycle: starting from the head and repeatedly following `next`, you would revisit certain nodes forever and never reach the end.\n\nWrite a function that determines whether the given linked list contains such a cycle anywhere along its chain, returning true if a cycle exists and false if the list terminates normally at null.\n\nYour solution should ideally avoid using extra data structures to track visited nodes, running in O(1) additional space by advancing two pointers through the list at different speeds and checking whether they ever meet.",
+ "functionName": "hasCycle",
+ "params": [
+  {
+   "name": "head",
+   "type": "ListNode"
+  }
+ ],
+ "returns": "boolean",
+ "examples": [
+  {
+   "input": "head = [4, 9, 1, 7], with node 7's next pointer redirected to node 9",
+   "output": "true",
+   "explanation": "Following the list from 4 -> 9 -> 1 -> 7, the last node points back to 9 instead of null, so traversal loops forever: a cycle exists."
+  },
+  {
+   "input": "head = [2, 5, 8]",
+   "output": "false",
+   "explanation": "Each node points to the next in sequence and the last node (8) points to null, so traversal reaches the end without repeating any node."
+  }
+ ],
+ "constraints": [
+  "The number of nodes in the list is in the range [0, 10^4]",
+  "-10^5 <= Node.val <= 10^5",
+  "The starting position of the cycle (if any) is fixed and given only implicitly through the next pointers, not as a separate input to your function",
+  "Your algorithm should run in O(n) time",
+  "Aim for O(1) extra space rather than storing visited nodes in a hash table"
+ ]
+}

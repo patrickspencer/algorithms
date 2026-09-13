@@ -1,0 +1,38 @@
+{
+ "id": "22",
+ "slug": "convert-sorted-array-to-binary-search-tree",
+ "title": "Convert Sorted Array to Height-Balanced Binary Search Tree",
+ "tags": [
+  "Array",
+  "Divide and Conquer",
+  "Tree",
+  "Binary Search Tree",
+  "Binary Tree"
+ ],
+ "statement": "You are given an array of unique integers arranged in strictly increasing order. Your task is to build a binary search tree from these values such that the resulting tree is height-balanced.\n\nA binary search tree satisfies the property that for every node, all values in its left subtree are smaller and all values in its right subtree are larger. A tree is considered height-balanced when, for every node in the tree, the heights of its left and right subtrees differ by at most one.\n\nBecause several different height-balanced arrangements may satisfy the input, any valid tree that meets the balance and BST-ordering requirements should be accepted as a correct answer. Return the root node of the tree you construct.\n\nAssume a standard binary tree node structure is available, where each node stores an integer value along with references to its left and right children.",
+ "functionName": "sortedArrayToBST",
+ "params": [
+  {
+   "name": "nums",
+   "type": "number[]"
+  }
+ ],
+ "returns": "TreeNode",
+ "examples": [
+  {
+   "input": "nums = [2,4,6,8,10,12,14]",
+   "output": "[8,4,12,2,6,10,14]",
+   "explanation": "The middle element 8 becomes the root. The left half [2,4,6] and right half [10,12,14] are recursively converted the same way, producing 4 as the root of the left subtree (children 2 and 6) and 12 as the root of the right subtree (children 10 and 14). Every node's subtrees differ in height by at most 1, and an in-order traversal of the tree reproduces the original sorted array."
+  },
+  {
+   "input": "nums = [1,3,5,7]",
+   "output": "[5,1,7,null,3]",
+   "explanation": "With an even number of elements, one valid choice picks 5 as the root (splitting into left half [1,3] and right half [7]). The right side has one node (7) directly as the right child, while the left side recursively places 1 as a left child with 3 attached as its right child, since 1 is smaller than 5. This keeps every subtree's height difference within 1, so the tree qualifies as balanced even though other equally valid balanced trees exist for this input."
+  }
+ ],
+ "constraints": [
+  "1 <= nums.length <= 10^4",
+  "-10^4 <= nums[i] <= 10^4",
+  "nums is sorted in strictly increasing order (no duplicate values)"
+ ]
+}

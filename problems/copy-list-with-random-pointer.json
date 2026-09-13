@@ -1,0 +1,36 @@
+{
+ "id": "65",
+ "slug": "copy-list-with-random-pointer",
+ "title": "Copy List with Random Pointer",
+ "tags": [
+  "Hash Table",
+  "Linked List"
+ ],
+ "statement": "You are given the head of a singly linked list in which every node has three fields:\n\n- `val`: an integer value stored in the node.\n- `next`: a reference to the next node in the list (or `null` for the last node).\n- `random`: a reference to *any* node in the same list (including possibly itself), or `null`.\n\nYour task is to produce a **completely independent deep copy** of this list. The copy must contain the same number of nodes, in the same order, with matching values, and its `next` and `random` references must mirror the connections of the original list, but every node in the copy must be a brand-new object. In particular, no node in the cloned list may share memory with any node in the original list, and no `next` or `random` pointer in the clone may point back into the original list (or vice versa). After cloning, changes made to one list (e.g., swapping a `random` pointer) must have no effect on the other.\n\nReturn the head node of the newly created list. If the original list is empty, return `null`.\n\nFor the purposes of describing inputs/outputs below, a list is written as a sequence of `[value, randomIndex]` pairs, where `randomIndex` is the 0-based position (within the same sequence) that the node's `random` pointer targets, or `null` if it targets nothing. In an actual function call you would instead receive/return real node objects linked via `next` and `random`.",
+ "functionName": "cloneRandomList",
+ "params": [
+  {
+   "name": "head",
+   "type": "Node"
+  }
+ ],
+ "returns": "Node",
+ "examples": [
+  {
+   "input": "head = [[3,2],[5,null],[9,0],[2,1]]",
+   "output": "[[3,2],[5,null],[9,0],[2,1]]",
+   "explanation": "There are 4 nodes with values 3, 5, 9, 2 at indices 0-3. Node 0's random points to node 2 (value 9), node 1's random is null, node 2's random points to node 0 (value 3), and node 3's random points to node 1 (value 5). The returned list has the same values and the same random-pointer pattern by index, but every node object is newly allocated, none of them are shared with the input list."
+  },
+  {
+   "input": "head = [[4,0]]",
+   "output": "[[4,0]]",
+   "explanation": "A single node with value 4 whose random pointer points to itself. The clone is a single new node with value 4 whose random pointer points to itself (the new node), not to the original node."
+  }
+ ],
+ "constraints": [
+  "0 <= number of nodes <= 1000",
+  "-10^4 <= val <= 10^4",
+  "Each node's random pointer is either null or points to some node within the same list (self-references are allowed)",
+  "The next pointers form a simple singly linked list with no cycles"
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "id": "90",
+ "slug": "implement-trie-prefix-tree",
+ "title": "Build a Word Lookup Tree (Prefix Tree)",
+ "tags": [
+  "Hash Table",
+  "String",
+  "Design",
+  "Trie"
+ ],
+ "statement": "Design a data structure that stores a growing collection of lowercase English words and can quickly answer questions about them based on their prefixes. Internally this kind of structure is known as a prefix tree (or trie), and it organizes words character by character so that words sharing a common beginning also share the same path through the structure.\n\nYour structure must support three operations:\n\n1. **Insert a word** into the collection. Inserting the same word more than once should have no additional effect beyond the first time.\n2. **Check whether an exact word** has previously been inserted into the collection.\n3. **Check whether any previously inserted word starts with a given prefix** (the prefix itself does not need to have been inserted as a whole word).\n\nAll operations should run efficiently even as the number of stored words grows large, ideally in time proportional to the length of the word or prefix being processed rather than the number of words stored.\n\nYou should implement this as a class that is first created empty, after which any sequence of insert and query operations may be performed on it in any order.",
+ "functionName": "WordDictionaryTree",
+ "params": [
+  {
+   "name": "operation",
+   "type": "string"
+  },
+  {
+   "name": "word",
+   "type": "string"
+  }
+ ],
+ "returns": "boolean | void",
+ "examples": [
+  {
+   "input": "tree = new WordDictionaryTree()\ntree.insert(\"lantern\")\ntree.search(\"lantern\")\ntree.search(\"lant\")\ntree.startsWith(\"lant\")\ntree.insert(\"lant\")\ntree.search(\"lant\")",
+   "output": "true\nfalse\ntrue\ntrue",
+   "explanation": "After inserting \"lantern\", the exact word \"lantern\" is found, but \"lant\" alone was never inserted so search(\"lant\") returns false, even though \"lant\" is a valid prefix of a stored word, so startsWith(\"lant\") returns true. Once \"lant\" is explicitly inserted, search(\"lant\") then returns true."
+  },
+  {
+   "input": "tree = new WordDictionaryTree()\ntree.startsWith(\"cat\")\ntree.insert(\"catalog\")\ntree.insert(\"catalog\")\ntree.startsWith(\"cat\")\ntree.search(\"catalog\")\ntree.search(\"cataloging\")",
+   "output": "false\ntrue\ntrue\nfalse",
+   "explanation": "Before any insertion, no word starts with \"cat\", so the first query is false. \"catalog\" is inserted twice, but duplicate insertion has no extra effect. Afterward, \"cat\" is a valid prefix and \"catalog\" is a stored word, while \"cataloging\" was never inserted and thus is not found by search."
+  }
+ ],
+ "constraints": [
+  "1 <= word.length, prefix.length <= 2000",
+  "word and prefix consist only of lowercase English letters ('a' to 'z')",
+  "Up to 3 * 10^4 total calls will be made across insert, search, and startsWith combined",
+  "The structure starts empty before any operations are performed"
+ ]
+}
